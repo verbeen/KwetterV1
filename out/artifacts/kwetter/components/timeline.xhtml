@@ -1,0 +1,57 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:c="http://java.sun.com/jsp/jstl/core"
+                xmlns:p="http://primefaces.org/ui" >
+<h:outputScript library="webjars" name="bootstrap/3.1.1/js/bootstrap.js" />
+<div class="panel panel-default">
+    <ul id="tltabs" class="nav nav-tabs">
+        <li class="active"><a href="#timeline" class="active" data-toggle="tab">Timeline</a></li>
+        <li><a href="#mentions" data-toggle="tab">@Mentions</a></li>
+        <li><a href="#results" data-toggle="tab">Search Results</a></li>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane fade in active" id="timeline">
+            <div class="panel-body" style="max-height: 265px; min-height: 265px; overflow-y: scroll;">
+                <ul id="timelinelist" class="list-group media-list">
+                    <ui:repeat var="kwet" value="#{userBean.currentUser.getTimeline()}">
+                        <li class="list-group-item media">
+                            <a class="pull-left" href="javascript:void(0)">
+                                <img class="media-object" src="..." alt="..." />
+                            </a>
+                            <div class="media-body">
+                                <h4 class="media-heading">
+                                    @#{kwet.poster.name} <small class="text-muted"> #{kwet.datumString} </small>
+                                </h4>
+                                #{kwet.kwet}
+                            </div>
+                        </li>
+                    </ui:repeat>
+                </ul>
+            </div>
+        </div>
+        <div class="tab-pane" style="max-height: 265px; min-height: 265px; overflow-y: scroll;" id="mentions">
+            <div class="panel-body" style="max-height: 265px; min-height: 265px; overflow-y: scroll;">
+                <ul id="mentionslist" class="list-group media-list">
+                    <ui:repeat var="kwet" value="#{userBean.currentUser.mentions}">
+                        <li class="list-group-item media">
+                            <a class="pull-left" href="javascript:void(0)">
+                                <img class="media-object" src="..." alt="..." />
+                            </a>
+                            <div class="media-body">
+                                <h4 class="media-heading">
+                                    @#{kwet.poster.name} <small class="text-muted"> #{kwet.datumString} </small>
+                                </h4>
+                                #{kwet.kwet}
+                            </div>
+                        </li>
+                    </ui:repeat>
+                </ul>
+            </div>
+        </div>
+        <div class="tab-pane fade" style="max-height: 265px; min-height: 265px; overflow-y: scroll;" id="results">
+            No results yet.
+        </div>
+    </div>
+</div>
+</ui:composition>

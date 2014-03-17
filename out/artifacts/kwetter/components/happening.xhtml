@@ -1,0 +1,54 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:p="http://primefaces.org/ui">
+<h:form style="display: none">
+    <p:remoteCommand name="writeKwet" actionListener="#{kwetBean.addKwet()}" oncomplete="loadKwet()" />
+</h:form>
+<h:outputScript>
+
+    function loadKwet()
+    {
+        var txt = document.getElementById('writeKwet').value;
+        var usr = "#{userBean.currentUser.name}";
+        var mykwet = document.getElementById('mykwet');
+        var tline = document.getElementById('timelinelist');
+        var dt = new Date();
+        var date = dt.getDate() + "/" + (dt.getMonth() + 1) + "/" + dt.getYear() + " " + dt.getHours() + ":" + dt.getMinutes() + ":" + dt.getSeconds();
+
+    //<![CDATA[
+        var html =
+            "<li class='list-group-item media'>" +
+            "<a class='pull-left' href='javascript:void(0)'>" +
+                "<img class='media-object' src='...' alt='...' />" +
+                "</a>" +
+            "<div class='media-body'>" +
+                "<h4 class='media-heading'>" +
+                    "@" + usr + " <small class='text-muted'>" + date + "</small>" +
+                    "</h4>" +
+                txt +
+                "</div>" +
+            "</li>";
+        mykwet.innerHTML = html;
+        if(tline != null)
+        {
+            tline.innerHTML = html + tline.innerHTML;
+        }
+    //]]>
+    }
+
+</h:outputScript>
+<div class="panel panel-default">
+    <div class="panel-heading">Post new kwet <span class="text-muted">@#{userBean.viewingUser.name}</span></div>
+    <div class="panel-body">
+        <div class="row" style="padding-left:5%; padding-right:5%;">
+            <div class="form-group">
+                <textarea id="writeKwet" class="form-control" rows="3" placeholder="Write your kwet" style="resize:none;"/>
+                <button class="btn btn-default" onclick="writeKwet([{name: 'txt', value: document.getElementById('writeKwet').value }])">
+                    Submit
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+</ui:composition>

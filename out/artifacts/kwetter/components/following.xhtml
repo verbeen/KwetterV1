@@ -1,0 +1,20 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:p="http://primefaces.org/ui">
+<h:form style="display: none">
+    <p:remoteCommand name="viewUser" actionListener="#{userBean.setViewingUser()}" onsuccess="window.location.reload(false)" />
+</h:form>
+<div class="panel panel-default">
+    <div class="panel-heading">Following</div>
+    <div class="panel-body">
+        <ui:repeat value="#{userBean.viewingUser.following}" var="user">
+            <div class="col-md-2">
+                <button class="btn btn-default" onclick="viewUser([{name: 'user', value: '#{user.name}'}])">
+                    @#{user.name}
+                </button>
+            </div>
+        </ui:repeat>
+    </div>
+</div>
+</ui:composition>

@@ -1,0 +1,34 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:p="http://primefaces.org/ui">
+    <h:outputStylesheet>
+        .navbar-static-top {
+            margin-bottom: 19px;
+        }
+    </h:outputStylesheet>
+    <h:form style="display: none">
+        <p:remoteCommand name="login" actionListener="#{userBean.logIn()}" onsuccess="window.location.reload(false)" />
+    </h:form>
+    <div class="navbar navbar-default navbar-static-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="javascript:void(0)">Kwetter</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <div class="navbar-form navbar-right">
+                    <div class="form-group">
+                        <input id="loginName" type="text" placeholder="Username" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <input id="loginPass" type="password" placeholder="Password" class="form-control" />
+                    </div>
+                    <button class="btn btn-success" onclick="login([{name: 'name', value: document.getElementById('loginName').value },
+                                                                    {name: 'pass', value: document.getElementById('loginPass').value }])">
+                        Sign in
+                    </button>
+                </div>
+            </div><!--/.navbar-collapse -->
+        </div>
+    </div>
+</ui:composition>

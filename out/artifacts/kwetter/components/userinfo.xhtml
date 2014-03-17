@@ -1,0 +1,55 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:c="http://java.sun.com/jsp/jstl/core"
+                xmlns:p="http://primefaces.org/ui">
+
+<h:form style="display: none">
+    <p:remoteCommand name="follow" action="#{userBean.addFollowing()}" oncomplete="window.location.reload(false)" />
+    <p:remoteCommand name="unfollow" action="#{userBean.removeFollowing()}" oncomplete="window.location.reload(false)" />
+</h:form>
+<h:outputScript library="primefaces" name="jquery/jquery.js" target="head" />
+
+<div class="panel panel-default">
+    <div class="panel-heading"><span class="text-muted">@#{userBean.viewingUser.name}</span> details</div>
+    <div class="panel-body">
+        <div class="row" style="padding-bottom: 3px; background-color: rgb(245,245,255);">
+            <div class="col-md-6" >
+                <span class="label label-default">Name</span>
+            </div>
+            <div class="col-md-6">
+                #{userBean.viewingUser.name}
+            </div>
+        </div>
+        <div class="row" style="padding-bottom: 3px;">
+            <div class="col-md-6">
+                <span class="label label-default">Web</span>
+            </div>
+            <div class="col-md-6" >
+                #{userBean.viewingUser.web}
+            </div>
+        </div>
+        <div class="row" style="padding-bottom: 3px; background-color: rgb(245,245,255);">
+            <div class="col-md-6">
+                <span class="label label-default">Bio</span>
+            </div>
+            <div class="col-md-6">
+                #{userBean.viewingUser.bio}
+            </div>
+        </div>
+        <div class="row" style="padding-bottom: 3px;">
+            <div class="col-md-6">
+                <c:choose>
+                    <c:when test="#{userBean.isFollowing()}">
+                        <a href="javascript:void(0)" class="label label-default" style="background-color:red;" onclick="unfollow();">Unfollow</a>
+                    </c:when>
+                    <c:otherwise>
+                        <a href="javascript:void(0)" class="label label-default" style="background-color:green;" onclick="follow();">Follow</a>
+                    </c:otherwise>
+                </c:choose>
+            </div>
+        </div>
+    </div>
+</div>
+
+</ui:composition>
