@@ -3,27 +3,27 @@ package kwetter.domain;
 import javax.persistence.*;
 import java.util.*;
 
-@Entity(name="Users")
+@Entity(name="Users") @Table(name="users")
 public class User
 {
     @Transient
     private static final long serialVersionUID = 1L;
 
-    @Id @GeneratedValue
-    private int id;
-    @Column(unique = true)
+    @Column(unique = true, name="name") @Id
     private String name;
+    @Column(name="web")
     private String web;
+    @Column(name="bio")
     private String bio;
 
-    @OneToMany
-    private List<User> followers;
-    @OneToMany
-    private List<User> following;
-    @OneToMany
-    private List<Kwet> kwets;
-    @OneToMany
-    private List<Kwet> mentions;
+    @ManyToMany @JoinTable(name="following", joinColumns = { @JoinColumn(name="following") }, inverseJoinColumns = { @JoinColumn(name="followers") })
+    private List<User> followers = new ArrayList<User>();
+    @ManyToMany(mappedBy="followers")
+    private List<User> following = new ArrayList<User>();
+    @OneToMany(mappedBy = "poster")
+    private List<Kwet> kwets = new ArrayList<Kwet>();
+    @ManyToMany @JoinTable(name="mentions", joinColumns = { @JoinColumn(name = "mentions") }, inverseJoinColumns = { @JoinColumn(name="mentioned") })
+    private List<Kwet> mentions = new ArrayList<Kwet>();
 
     public User()
     {
@@ -40,11 +40,6 @@ public class User
         this.name = name;
         this.web = web;
         this.bio = bio;
-    }
-
-    public int getId()
-    {
-        return id;
     }
 
     public String getBio()
@@ -77,18 +72,19 @@ public class User
         this.web = web;
     }
 
-    public List<User> getFollowing() { return this.following; }
-    public void setFollowing(ArrayList<User> following) { this.following = following; }
+    public List<User> getFollowing()
+    {
+        return this.following;
+    }
+
+    public void setFollowing(ArrayList<User> following)
+    {
+        this.following = following;
+    }
+
     public Boolean addFollowing(User following)
     {
-        if(this.following.add(following))
-        {
-            return following.addFollower(this);
-        }
-        else
-        {
-            return false;
-        }
+        return this.following.add(following);
     }
     public Boolean removeFollowing(User following)
     {
@@ -101,19 +97,19 @@ public class User
 
     public List<Kwet> getKwets()
     {
-        return this.kwets;
+        return new ArrayList(this.kwets);
     }
 
-    public void setKwets(ArrayList<Kwet> tweets)
+    public void setKwets(ArrayList<Kwet> kwets)
     {
-        this.kwets = tweets;
+        this.kwets = kwets;
     }
 
     public Boolean addKwet(Kwet kwet)
     {
-        Boolean result = this.kwets.add(kwet);
+        Boolean added = this.kwets.add(kwet);
         Collections.sort(this.kwets);
-        return result;
+        return added;
     }
 
     public List<User> getFollowers()
@@ -136,22 +132,6 @@ public class User
         return this.followers.remove(follower);
     }
 
-    public ArrayList<Kwet> getTimeline()
-    {
-        ArrayList<Kwet> kwets = new ArrayList<Kwet>();
-
-        kwets.addAll(this.kwets);
-
-        for(User user : this.following)
-        {
-            kwets.addAll(user.getKwets());
-        }
-
-        Collections.sort(kwets);
-
-        return kwets;
-    }
-
     public Kwet getLatestKwet()
     {
         if(this.kwets.size() > 0)
@@ -166,7 +146,16 @@ public class User
 
     public List<Kwet> getMentions()
     {
-        return mentions;
+        List<Kwet> result = new ArrayList(this.mentions);
+        Collections.sort(result);
+        return result;
+    }
+
+    public boolean addMention(Kwet kwet)
+    {
+        boolean added = this.mentions.add(kwet);
+        Collections.sort(this.mentions);
+        return added;
     }
 
     @Override
@@ -193,5 +182,10 @@ public class User
     public String toString()
     {
         return "twitter.domain.User[naam=" + name + "]";
+    }
+
+    public void setMentions(List<Kwet> kwetMentions)
+    {
+        this.mentions = kwetMentions;
     }
 }

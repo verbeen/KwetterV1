@@ -10,13 +10,13 @@
             <ui:repeat var="kwet" value="#{userBean.viewingUser.kwets}">
                 <li class="list-group-item media">
                     <a class="pull-left" href="javascript:void(0)">
-                        <img class="media-object" src="..." alt="..." />
+                        <img class="media-object" src="resources/user.png" width="24px" alt="..." />
                     </a>
                     <div class="media-body">
                         <h4 class="media-heading">
                             @#{kwet.poster.name} <small class="text-muted"> #{kwet.datumString} </small>
                         </h4>
-                        #{kwet.kwet}
+                        #{kwet.body}
                     </div>
                 </li>
             </ui:repeat>

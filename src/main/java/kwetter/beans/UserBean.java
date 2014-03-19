@@ -1,41 +1,27 @@
 package kwetter.beans;
 
-import kwetter.dao.interfaces.UserDAO;
+import kwetter.domain.Kwet;
 import kwetter.domain.User;
-import kwetter.events.FollowEvent;
-import kwetter.events.UserEvent;
-import kwetter.events.annotations.Follow;
-import kwetter.events.annotations.Login;
-import kwetter.events.annotations.Logout;
-import kwetter.events.annotations.Unfollow;
 import kwetter.helpers.ViewType;
+import kwetter.service.KwetterServiceDAO;
 import javax.enterprise.context.SessionScoped;
-import javax.enterprise.event.Event;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
 import java.io.IOException;
 import java.io.Serializable;
+import java.util.List;
 import java.util.Map;
 
 /**
  * Created by geh on 19-2-14.
  */
-
 @SessionScoped
 @Named("userBean")
 public class UserBean implements Serializable
 {
     @Inject
-    private UserDAO userDAO;
-    @Inject @Login
-    Event<UserEvent> loginEvent;
-    @Inject @Logout
-    Event<UserEvent> logoutEvent;
-    @Inject @Follow
-    Event<FollowEvent> followEvent;
-    @Inject @Unfollow
-    Event<FollowEvent> unFollowEvent;
+    private KwetterServiceDAO service;
 
     private User currentUser;
     private User viewingUser;
@@ -54,23 +40,13 @@ public class UserBean implements Serializable
         String name = map.get("name");
         String pass = map.get("pass");
 
-        User user = null;
-        if(name != null && pass != null)
-        {
-            user = userDAO.getUser(name);
-            if(user == null)
-            {
-                user = userDAO.addUser(new User(name, pass, "wnegjnerjgksjkdgk"));
-            }
-
-            this.loggedIn = true;
-        }
+        User user = this.service.logIn(name, pass);
 
         if(user != null)
         {
+            this.loggedIn = true;
             this.setCurrentUser(user);
             this.setViewingUser(user);
-            this.loginEvent.fire(new UserEvent(user));
         }
 
         return "?faces-redirect=true";
@@ -78,9 +54,14 @@ public class UserBean implements Serializable
 
     public String logOut() throws IOException
     {
-        this.logoutEvent.fire(new UserEvent(currentUser));
+        this.service.logOut(this.currentUser);
         this.loggedIn = false;
         return "?faces-redirect=true";
+    }
+
+    public List<Kwet> getTimeline()
+    {
+        return service.getTimeline(this.currentUser);
     }
 
     public ViewType getViewWindow()
@@ -124,7 +105,8 @@ public class UserBean implements Serializable
     {
         Map<String, String> map = FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap();
         String name = map.get("user");
-        User user = userDAO.getUser(name);
+
+        User user = service.getUser(name);
         if(user != null)
         {
             this.setViewingUser(user);
@@ -174,12 +156,12 @@ public class UserBean implements Serializable
 
     public void addFollowing()
     {
-        this.followEvent.fire(new FollowEvent(this.currentUser, this.viewingUser));
+        this.service.addFollow(this.currentUser, this.viewingUser);
     }
 
     public void removeFollowing()
     {
-        this.unFollowEvent.fire(new FollowEvent(this.currentUser, this.viewingUser));
+        service.unFollow(this.currentUser, this.viewingUser);
     }
 
     public Boolean getLoggedIn()

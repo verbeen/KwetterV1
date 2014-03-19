@@ -2,52 +2,66 @@ package kwetter.domain;
 
 import javax.persistence.*;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Comparator;
+import java.util.*;
 
-@Entity(name="Kwets")
+@Entity(name="Kwets")  @Table(name="kwets")
 public class Kwet implements Comparable<Kwet>, Comparator<Kwet>
 {
     @Transient
     private static final long serialVersionUID = 1L;
 
-    @Id @GeneratedValue
-    private String id;
-
-    @ManyToOne
+    @Column(name = "id") @Id @GeneratedValue
+    private int id;
+    @Column(name = "body")
+    private String body;
+    @JoinColumn(name = "poster_name") @ManyToOne(optional = false)
     private User poster;
-    private String kwet;
+    @Column(name = "post_date") @Temporal(TemporalType.TIMESTAMP)
     private Calendar postDate;
+    @Column(name = "posted_from")
     private String postedFrom;
+
+    @ManyToMany(mappedBy = "mentions")
+    private Set<User> mentioned = new HashSet<User>();
+    @ManyToMany(mappedBy = "kwets")
+    private List<Trend> trends = new ArrayList<Trend>();
 
     public Kwet()
     {
+
     }
 
-    public Kwet(String kwet)
+    public Kwet(String body)
     {
-        this.kwet = kwet;
+        this.body = body;
     }
 
-    public Kwet(User poster, String kwet, Calendar datum, String vanaf)
+    public Kwet(User poster, String body, Calendar datum, String vanaf)
     {
         this.poster = poster;
-        this.kwet = kwet;
+        this.body = body;
         this.postDate = datum;
         this.postedFrom = vanaf;
     }
 
-    public User getPoster() { return this.poster; }
-    public void setPoster(User poster) { this.poster = poster; }
-
-    public String getKwet()
+    public User getPoster()
     {
-        return kwet;
+        return this.poster;
     }
 
-    public void setKwet(String kwet)
+    public void setPoster(User poster)
     {
-        this.kwet = kwet;
+        this.poster = poster;
+    }
+
+    public String getBody()
+    {
+        return body;
+    }
+
+    public void setBody(String body)
+    {
+        this.body = body;
     }
 
     public Calendar getDatum()
@@ -79,21 +93,33 @@ public class Kwet implements Comparable<Kwet>, Comparator<Kwet>
     @Override
     public int hashCode()
     {
-        int hash = 0;
-        hash += (kwet != null ? kwet.hashCode() + postDate.hashCode() : 0);
-        return hash;
+        return this.id;
     }
 
     @Override
     public int compare(Kwet o1, Kwet o2)
     {
-        return o2.getDatum().compareTo(o1.getDatum());
+        if(o1.id == o2.id)
+        {
+            return 0;
+        }
+        else
+        {
+            return o2.getDatum().compareTo(o1.getDatum());
+        }
     }
 
     @Override
     public int compareTo(Kwet o)
     {
-        return o.getDatum().compareTo(this.getDatum());
+        if(o.id == this.id)
+        {
+            return 0;
+        }
+        else
+        {
+            return o.getDatum().compareTo(this.getDatum());
+        }
     }
 
     @Override
@@ -103,12 +129,9 @@ public class Kwet implements Comparable<Kwet>, Comparator<Kwet>
         {
             Kwet other = (Kwet) object;
 
-            if(this.hashCode() == other.hashCode())
+            if(this.id == other.id)
             {
-                if(this.kwet == other.kwet && this.postDate.equals(other.postDate) && this.poster.getName() == other.poster.getName())
-                {
-                    return true;
-                }
+                return true;
             }
         }
 
@@ -118,16 +141,46 @@ public class Kwet implements Comparable<Kwet>, Comparator<Kwet>
     @Override
     public String toString()
     {
-        return "twitter.domain.Tweet[id=" + postDate.toString() + "]";
+        return Kwet.class.toString() + "[name=" + this.id + "]";
     }
 
-    public String getId()
+    public int getId()
     {
         return id;
     }
 
-    public void setId(String id)
+    public void setId(int id)
     {
         this.id = id;
+    }
+
+    public List<Trend> getTrends()
+    {
+        return trends;
+    }
+
+    public void setTrends(List<Trend> trends)
+    {
+        this.trends = trends;
+    }
+
+    public void addTrend(Trend trend)
+    {
+        this.trends.add(trend);
+    }
+
+    public void setMentioned(Set<User> userMentions)
+    {
+        this.mentioned = userMentions;
+    }
+
+    public List<User> getMentioned()
+    {
+        return new ArrayList(this.mentioned);
+    }
+
+    public boolean addMention(User user)
+    {
+        return this.mentioned.add(user);
     }
 }

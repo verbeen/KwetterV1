@@ -1,7 +1,6 @@
 package kwetter.dao.interfaces;
 
 import kwetter.domain.Kwet;
-import kwetter.domain.Mention;
 import kwetter.domain.User;
 import kwetter.events.FollowEvent;
 import kwetter.events.KwetEvent;
@@ -16,9 +15,7 @@ import java.util.List;
  */
 public interface UserDAO
 {
-    User addUser(User user);
-
-    User getUser(int id);
+    void addUser(User user);
 
     User getUser(String name);
 
@@ -26,9 +23,9 @@ public interface UserDAO
 
     void unFollow(FollowEvent event);
 
-    List<Mention> getAllMentions();
-
     void addMentions(KwetEvent event);
 
     void addMention(User user, Kwet kwet);
+
+    void addFollowing(User follower, User following);
 }

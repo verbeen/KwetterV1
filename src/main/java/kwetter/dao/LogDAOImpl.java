@@ -5,6 +5,9 @@ import kwetter.domain.User;
 import kwetter.events.UserEvent;
 import kwetter.events.annotations.Login;
 import kwetter.events.annotations.Logout;
+
+import javax.ejb.Singleton;
+import javax.ejb.Stateless;
 import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.event.Observes;
 import java.util.GregorianCalendar;
@@ -12,7 +15,7 @@ import java.util.GregorianCalendar;
 /**
  * Created by geh on 11-3-14.
  */
-@ApplicationScoped
+@Stateless
 public class LogDAOImpl implements LogDAO
 {
     @Override

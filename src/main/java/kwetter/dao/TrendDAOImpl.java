@@ -6,14 +6,12 @@ import kwetter.domain.Trend;
 import kwetter.events.KwetEvent;
 import kwetter.events.annotations.ProcessKwet;
 
-import javax.enterprise.context.ApplicationScoped;
+import javax.ejb.Stateless;
 import javax.enterprise.event.Observes;
-import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
@@ -21,9 +19,11 @@ import java.util.List;
 /**
  * Created by geh on 26-2-14.
  */
-@ApplicationScoped
+@Stateless
 public class TrendDAOImpl implements TrendDAO, Serializable
 {
+    //@Resource
+    //private UserTransaction ut;
     @PersistenceContext(unitName = "kwetterDB")
     private EntityManager em;
 
@@ -52,15 +52,28 @@ public class TrendDAOImpl implements TrendDAO, Serializable
     @Override
     public void addTrends(@Observes @ProcessKwet KwetEvent event)
     {
-        Kwet kwet = event.kwet;
-        String[] split = kwet.getKwet().split(" ");
-        for(String s : split)
-        {
-            if(s.length() > 1 && s.charAt(0) == "#".charAt(0))
+        //try
+        //{
+            //ut.begin();
+
+            Kwet kwet = event.kwet;
+            String[] split = kwet.getBody().split(" ");
+            for(String s : split)
             {
-                addTrend(s, kwet);
+                if(s.length() > 1 && s.charAt(0) == "#".charAt(0))
+                {
+                    this.addTrend(s, kwet);
+                }
             }
-        }
+
+            em.merge(kwet);
+
+            //ut.commit();
+        //}
+        //catch(Exception ex)
+        //{
+        //    ex.printStackTrace();
+        //}
     }
 
     @Override
@@ -74,8 +87,16 @@ public class TrendDAOImpl implements TrendDAO, Serializable
         if(trends.isEmpty())
         {
             trend = new Trend(name);
+            em.persist(trend);
+
+            //trend = em.merge(trend);
+            //kwet = em.merge(kwet);
+
             trend.addKwet(kwet);
+            kwet.addTrend(trend);
+
             em.merge(trend);
+            em.merge(kwet);
         }
         else
         {
@@ -83,6 +104,10 @@ public class TrendDAOImpl implements TrendDAO, Serializable
             if(!trend.getKwets().contains(kwet))
             {
                 trend.addKwet(kwet);
+                kwet.addTrend(trend);
+
+                em.merge(trend);
+                em.merge(kwet);
             }
         }
     }
@@ -90,7 +115,7 @@ public class TrendDAOImpl implements TrendDAO, Serializable
     @Override
     public Trend getTrend(String name)
     {
-        Query q = em.createQuery("select trend from Trends trend where trend.name = :name ");
+        Query q = em.createQuery("select trend from Trends trend where trend.name = :name");
         q.setParameter("name", name);
         List<Trend> trends = q.getResultList();
         Trend result = null;

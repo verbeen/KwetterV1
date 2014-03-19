@@ -1,7 +1,7 @@
 package kwetter.beans;
 
-import kwetter.dao.interfaces.TrendDAO;
 import kwetter.domain.Trend;
+import kwetter.service.KwetterServiceDAO;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -16,7 +16,7 @@ import java.util.List;
 public class TrendsBean implements Serializable
 {
     @Inject
-    private TrendDAO trendDAO;
+    private KwetterServiceDAO service;
 
     public TrendsBean()
     {
@@ -25,6 +25,6 @@ public class TrendsBean implements Serializable
 
     public List<Trend> getAllTrends()
     {
-        return trendDAO.getAllTrends();
+        return service.getAllTrends();
     }
 }

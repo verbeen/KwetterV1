@@ -14,16 +14,16 @@
         <div class="tab-pane fade in active" id="timeline">
             <div class="panel-body" style="max-height: 265px; min-height: 265px; overflow-y: scroll;">
                 <ul id="timelinelist" class="list-group media-list">
-                    <ui:repeat var="kwet" value="#{userBean.currentUser.getTimeline()}">
+                    <ui:repeat var="kwet" value="#{userBean.getTimeline()}">
                         <li class="list-group-item media">
                             <a class="pull-left" href="javascript:void(0)">
-                                <img class="media-object" src="..." alt="..." />
+                                <img class="media-object" src="resources/user.png" width="24px" alt="..." />
                             </a>
                             <div class="media-body">
                                 <h4 class="media-heading">
                                     @#{kwet.poster.name} <small class="text-muted"> #{kwet.datumString} </small>
                                 </h4>
-                                #{kwet.kwet}
+                                #{kwet.body}
                             </div>
                         </li>
                     </ui:repeat>
@@ -36,13 +36,13 @@
                     <ui:repeat var="kwet" value="#{userBean.currentUser.mentions}">
                         <li class="list-group-item media">
                             <a class="pull-left" href="javascript:void(0)">
-                                <img class="media-object" src="..." alt="..." />
+                                <img class="media-object" src="resources/user.png" width="24px" alt="..." />
                             </a>
                             <div class="media-body">
                                 <h4 class="media-heading">
                                     @#{kwet.poster.name} <small class="text-muted"> #{kwet.datumString} </small>
                                 </h4>
-                                #{kwet.kwet}
+                                #{kwet.body}
                             </div>
                         </li>
                     </ui:repeat>

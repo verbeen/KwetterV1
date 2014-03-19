@@ -15,7 +15,5 @@ public interface PostingDAO
 {
     List<Kwet> searchKwets(String search);
 
-    Boolean addKwet(User user);
-
     void addKwet(KwetEvent event);
 }

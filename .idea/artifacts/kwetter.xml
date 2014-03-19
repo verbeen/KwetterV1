@@ -5,7 +5,8 @@
       <element id="javaee-facet-resources" facet="KwetterV1/web/Web" />
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
-          <element id="jpa-descriptors" facet="KwetterV1/jpa/JPA" />
+          <element id="module-output" name="KwetterV1" />
+          <element id="file-copy" path="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" output-file-name="persistence.xml" />
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="Maven: javax.annotation:jsr250-api:1.0" />
