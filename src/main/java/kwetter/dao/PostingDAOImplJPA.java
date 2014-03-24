@@ -5,18 +5,15 @@ import kwetter.domain.Kwet;
 import kwetter.domain.User;
 import kwetter.events.KwetEvent;
 import kwetter.events.annotations.AddKwet;
-import kwetter.events.annotations.ProcessKwet;
-import javax.annotation.Resource;
-import javax.ejb.Singleton;
+import kwetter.interceptors.annotations.VolgTrend;
+
 import javax.ejb.Stateless;
-import javax.enterprise.context.ApplicationScoped;
-import javax.enterprise.event.Event;
 import javax.enterprise.event.Observes;
-import javax.inject.Inject;
+import javax.enterprise.inject.Alternative;
+import javax.enterprise.inject.Specializes;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
-import javax.transaction.UserTransaction;
 import java.io.Serializable;
 import java.util.List;
 
@@ -24,12 +21,13 @@ import java.util.List;
  * Created by geh on 26-2-14.
  */
 @Stateless
-public class PostingDAOImpl implements PostingDAO, Serializable
+@Alternative @Specializes
+public class PostingDAOImplJPA extends PostingDAOImplColl
 {
     @PersistenceContext(unitName = "kwetterDB")
     private EntityManager em;
 
-    public PostingDAOImpl()
+    public PostingDAOImplJPA()
     {
 
     }
@@ -43,7 +41,7 @@ public class PostingDAOImpl implements PostingDAO, Serializable
         return q.getResultList();
     }
 
-    @Override
+    @Override @VolgTrend
     public void addKwet(@Observes @AddKwet KwetEvent evt)
     {
         Kwet kwet = evt.kwet;

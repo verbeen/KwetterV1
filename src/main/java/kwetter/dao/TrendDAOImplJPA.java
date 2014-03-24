@@ -8,6 +8,8 @@ import kwetter.events.annotations.ProcessKwet;
 
 import javax.ejb.Stateless;
 import javax.enterprise.event.Observes;
+import javax.enterprise.inject.Alternative;
+import javax.enterprise.inject.Specializes;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
@@ -20,14 +22,15 @@ import java.util.List;
  * Created by geh on 26-2-14.
  */
 @Stateless
-public class TrendDAOImpl implements TrendDAO, Serializable
+@Alternative @Specializes
+public class TrendDAOImplJPA extends TrendDAOImplColl
 {
     //@Resource
     //private UserTransaction ut;
     @PersistenceContext(unitName = "kwetterDB")
     private EntityManager em;
 
-    public TrendDAOImpl()
+    public TrendDAOImplJPA()
     {
 
     }

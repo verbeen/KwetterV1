@@ -1,26 +1,41 @@
 package kwetter.interceptors;
 
-import kwetter.domain.Kwet;
 import kwetter.events.KwetEvent;
-import kwetter.events.annotations.AddKwet;
+import kwetter.interceptors.annotations.VolgTrend;
 
 import javax.enterprise.context.ApplicationScoped;
-import javax.enterprise.event.Observes;
-import javax.enterprise.event.TransactionPhase;
+import javax.interceptor.AroundInvoke;
+import javax.interceptor.Interceptor;
+import javax.interceptor.InvocationContext;
 import java.util.regex.Pattern;
 
 /**
  * Created by geh on 19-3-14.
  */
+@Interceptor @VolgTrend
 @ApplicationScoped
 public class VolgTrendInterceptor
 {
-    public void interceptKwet(@Observes(during=TransactionPhase.BEFORE_COMPLETION) @AddKwet KwetEvent evt)
+    @AroundInvoke
+    public Object addKwet(InvocationContext ctx) throws Exception
     {
-        Kwet kwet = evt.kwet;
-        kwet.setBody(this.replaceWord(kwet.getBody(), "vet", "dik"));
-        kwet.setBody(this.replaceWord(kwet.getBody(), "cool", "hard"));
-        evt.kwet = kwet;
+        Object[] parameters = ctx.getParameters();
+        KwetEvent param = (KwetEvent)parameters[0];
+
+        param.kwet.setBody(this.replaceWord(param.kwet.getBody(), "vet", "dik"));
+        param.kwet.setBody(this.replaceWord(param.kwet.getBody(), "cool", "hard"));
+
+        parameters[0] = param;
+
+        try
+        {
+            return ctx.proceed();
+        }
+        catch(Exception ex)
+        {
+            ex.printStackTrace();
+            return null;
+        }
     }
 
     private String replaceWord(String source, String word, String replacement)

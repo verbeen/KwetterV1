@@ -11,22 +11,20 @@ import kwetter.events.annotations.Unfollow;
 
 import javax.ejb.Stateless;
 import javax.enterprise.event.Observes;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
+import javax.enterprise.inject.Default;
 import java.io.Serializable;
-import java.util.List;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Created by geh on 26-2-14.
  */
+@Default
 @Stateless
-public class UserDAOImpl implements UserDAO, Serializable
+public class UserDAOImplColl implements UserDAO
 {
-    @PersistenceContext(unitName = "kwetterDB")
-    private EntityManager em;
+    private ConcurrentHashMap<String, User> users = new ConcurrentHashMap<String, User>();
 
-    public UserDAOImpl()
+    public UserDAOImplColl()
     {
 
     }
@@ -34,7 +32,7 @@ public class UserDAOImpl implements UserDAO, Serializable
     @Override
     public void addUser(User user)
     {
-        em.persist(user);
+        this.users.put(user.getName(), user);
     }
 
     @Override
@@ -70,7 +68,7 @@ public class UserDAOImpl implements UserDAO, Serializable
     @Override
     public User getUser(String name)
     {
-        return em.find(User.class, name);
+        return this.users.get(name);
     }
 
     @Override
@@ -97,8 +95,6 @@ public class UserDAOImpl implements UserDAO, Serializable
     {
         user.addMention(kwet);
         kwet.addMention(user);
-        em.merge(user);
-        em.merge(kwet);
     }
 
     @Override
@@ -106,15 +102,11 @@ public class UserDAOImpl implements UserDAO, Serializable
     {
         follower.addFollowing(following);
         following.addFollower(follower);
-        em.merge(follower);
-        em.merge(following);
     }
 
     public void removeFollowing(User follower, User following)
     {
         follower.removeFollowing(following);
         following.removeFollower(follower);
-        em.merge(follower);
-        em.merge(following);
     }
 }

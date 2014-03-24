@@ -8,8 +8,9 @@ import kwetter.events.FollowEvent;
 import kwetter.events.KwetEvent;
 import kwetter.events.UserEvent;
 import kwetter.events.annotations.*;
+import kwetter.interceptors.annotations.VolgTrend;
+import kwetter.service.interfaces.IKwetterService;
 
-import javax.annotation.PostConstruct;
 import javax.ejb.*;
 import javax.enterprise.event.Event;
 import javax.inject.Inject;
@@ -20,7 +21,7 @@ import java.util.*;
  */
 @Stateless
 //@TransactionManagement(TransactionManagementType.BEAN)
-public class KwetterServiceDAOImpl implements KwetterServiceDAO
+public class KwetterService implements IKwetterService
 {
     @Inject
     private PostingDAO postingDAO;
@@ -43,7 +44,7 @@ public class KwetterServiceDAOImpl implements KwetterServiceDAO
     @Inject @ProcessKwet
     private Event<KwetEvent> processKwetEvent;
 
-    public KwetterServiceDAOImpl()
+    public KwetterService()
     {
 
     }

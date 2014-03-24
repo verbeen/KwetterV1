@@ -3,7 +3,8 @@ package kwetter.beans;
 import com.google.gson.Gson;
 import kwetter.domain.Kwet;
 import kwetter.helpers.Triplet;
-import kwetter.service.KwetterServiceDAO;
+import kwetter.service.interfaces.IKwetterService;
+
 import javax.enterprise.context.RequestScoped;
 import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
@@ -23,7 +24,7 @@ import java.util.Map;
 public class KwetBean implements Serializable
 {
     @Inject
-    private KwetterServiceDAO service;
+    private IKwetterService service;
     @Inject
     private UserBean userBean;
 

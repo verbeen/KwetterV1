@@ -1,6 +1,7 @@
 package kwetter.service;
 
 import kwetter.domain.User;
+import kwetter.service.interfaces.IKwetterService;
 
 import javax.annotation.PostConstruct;
 import javax.ejb.Singleton;
@@ -17,7 +18,7 @@ import java.util.GregorianCalendar;
 public class InitBean
 {
     @Inject
-    private KwetterServiceDAO service;
+    private IKwetterService service;
 
     @PostConstruct
     private void init()

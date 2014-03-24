@@ -1,4 +1,4 @@
-package kwetter.service;
+package kwetter.service.interfaces;
 
 import kwetter.domain.Kwet;
 import kwetter.domain.Trend;
@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * Created by geh on 18-3-14.
  */
-public interface KwetterServiceDAO extends Serializable
+public interface IKwetterService extends Serializable
 {
     List<Kwet> searchKwets(String filter);
 

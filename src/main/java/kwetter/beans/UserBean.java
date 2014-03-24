@@ -3,7 +3,8 @@ package kwetter.beans;
 import kwetter.domain.Kwet;
 import kwetter.domain.User;
 import kwetter.helpers.ViewType;
-import kwetter.service.KwetterServiceDAO;
+import kwetter.service.interfaces.IKwetterService;
+
 import javax.enterprise.context.SessionScoped;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
@@ -21,7 +22,7 @@ import java.util.Map;
 public class UserBean implements Serializable
 {
     @Inject
-    private KwetterServiceDAO service;
+    private IKwetterService service;
 
     private User currentUser;
     private User viewingUser;
