@@ -13,7 +13,7 @@ public class Trend
 {
     @Column(name = "name") @Id
     private String name;
-    @ManyToMany(cascade = CascadeType.PERSIST)
+    @ManyToMany
     private Set<Kwet> kwets = new HashSet<Kwet>();
 
     public Trend(String name)
@@ -43,5 +43,10 @@ public class Trend
     public Boolean addKwet(Kwet kwet)
     {
         return this.kwets.add(kwet);
+    }
+
+    public void removeKwet(Kwet kwet)
+    {
+        this.kwets.remove(kwet);
     }
 }

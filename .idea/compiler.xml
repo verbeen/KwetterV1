@@ -23,6 +23,7 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
         <module name="KwetterV1" />
+        <module name="WebAPI" />
       </profile>
     </annotationProcessing>
   </component>

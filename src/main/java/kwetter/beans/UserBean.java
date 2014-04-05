@@ -11,6 +11,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 import java.io.IOException;
 import java.io.Serializable;
+import java.security.Principal;
 import java.util.List;
 import java.util.Map;
 
@@ -28,7 +29,9 @@ public class UserBean implements Serializable
     private User viewingUser;
     private ViewType viewWindow = ViewType.KWETS;
     private String currentPage = "index";
-    private Boolean loggedIn = false;
+
+    private String name;
+    private String password;
 
     public UserBean()
     {
@@ -45,7 +48,6 @@ public class UserBean implements Serializable
 
         if(user != null)
         {
-            this.loggedIn = true;
             this.setCurrentUser(user);
             this.setViewingUser(user);
         }
@@ -53,10 +55,34 @@ public class UserBean implements Serializable
         return "?faces-redirect=true";
     }
 
+    public User getAuthenticatedUser()
+    {
+        User foundUser = null;
+
+        FacesContext fc = FacesContext.getCurrentInstance();
+        Principal principal = fc.getExternalContext().getUserPrincipal();
+
+        if (principal != null)
+        {
+            foundUser = service.getUser(principal.getName());
+
+            if(this.currentUser == null)
+            {
+                this.setCurrentUser(foundUser);
+                this.setViewingUser(foundUser);
+            }
+        }
+
+        return foundUser;
+    }
+
     public String logOut() throws IOException
     {
         this.service.logOut(this.currentUser);
-        this.loggedIn = false;
+        FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
+        this.setCurrentUser(null);
+        this.setViewingUser(null);
+
         return "?faces-redirect=true";
     }
 
@@ -119,7 +145,7 @@ public class UserBean implements Serializable
         return currentPage;
     }
 
-    public void setCurrentPage()
+    public String setCurrentPage()
     {
         Map<String, String> map = FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap();
         String page = map.get("page");
@@ -128,6 +154,8 @@ public class UserBean implements Serializable
         {
             this.currentPage = page;
         }
+
+        return "?faces-redirect=true";
     }
 
     public User getCurrentUser()
@@ -167,7 +195,15 @@ public class UserBean implements Serializable
 
     public Boolean getLoggedIn()
     {
-        return loggedIn;
+        this.currentUser = this.getAuthenticatedUser();
+        if(this.currentUser == null)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
     }
 
 }

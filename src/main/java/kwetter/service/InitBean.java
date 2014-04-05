@@ -1,5 +1,6 @@
 package kwetter.service;
 
+import kwetter.domain.Role;
 import kwetter.domain.User;
 import kwetter.service.interfaces.IKwetterService;
 
@@ -23,9 +24,17 @@ public class InitBean
     @PostConstruct
     private void init()
     {
-        User jan = service.addUser("jan", "gkejrbgkjlesr", "wefwe");
-        User piet = service.addUser("piet", "gkejrbgkjlesr", "wefwe");
-        User bert = service.addUser("bert", "gkejrbgkjlesr", "wefwe");
+        Role adminRole = service.addRole("admin");
+        Role moderatorRole = service.addRole("moderator");
+
+        User admin = service.addUser("admin", "8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918", "a@b.com", "ekjlrgbsrbhtlks", "hrthrdty");
+        User moderator = service.addUser("moderator", "8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918", "a@b.com", "bio", "web" );
+        User jan = service.addUser("jan", "8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918","a@b.com", "gkejrbgkjlesr", "wefwe");
+        User piet = service.addUser("piet", "8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918", "a@b.com", "gkejrbgkjlesr", "wefwe");
+        User bert = service.addUser("bert", "8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918", "a@b.com", "gkejrbgkjlesr", "wefwe");
+
+        service.addRole(admin, adminRole);
+        service.addRole(moderator, moderatorRole);
 
         GregorianCalendar cal = new GregorianCalendar();
         cal.add(Calendar.HOUR, -24);

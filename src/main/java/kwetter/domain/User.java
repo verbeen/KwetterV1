@@ -11,33 +11,42 @@ public class User
 
     @Column(unique = true, name="name") @Id
     private String name;
+    @Column(name="email")
+    private String email;
     @Column(name="web")
     private String web;
     @Column(name="bio")
     private String bio;
+    @Column(name="password")
+    private String password;
 
     @ManyToMany @JoinTable(name="following", joinColumns = { @JoinColumn(name="following") }, inverseJoinColumns = { @JoinColumn(name="followers") })
-    private List<User> followers = new ArrayList<User>();
+    private List<User> followers = new ArrayList();
     @ManyToMany(mappedBy="followers")
-    private List<User> following = new ArrayList<User>();
+    private List<User> following = new ArrayList();
     @OneToMany(mappedBy = "poster")
-    private List<Kwet> kwets = new ArrayList<Kwet>();
+    private List<Kwet> kwets = new ArrayList();
     @ManyToMany @JoinTable(name="mentions", joinColumns = { @JoinColumn(name = "mentions") }, inverseJoinColumns = { @JoinColumn(name="mentioned") })
-    private List<Kwet> mentions = new ArrayList<Kwet>();
+    private List<Kwet> mentions = new ArrayList();
+    @ManyToMany @JoinTable(name="groups", joinColumns = { @JoinColumn(name = "user")}, inverseJoinColumns = { @JoinColumn(name="role") })
+    private List<Role> roles = new ArrayList();
 
     public User()
     {
 
     }
 
-    public User(String name)
+    public User(String name, String password)
     {
         this.name = name;
+        this.password = password;
     }
 
-    public User(String name, String web, String bio)
+    public User(String name, String password, String email, String web, String bio)
     {
         this.name = name;
+        this.password = password;
+        this.email = email;
         this.web = web;
         this.bio = bio;
     }
@@ -60,6 +69,16 @@ public class User
     public void setName(String name)
     {
         this.name = name;
+    }
+
+    public String getEmail()
+    {
+        return email;
+    }
+
+    public void setEmail(String email)
+    {
+        this.email = email;
     }
 
     public String getWeb()
@@ -136,6 +155,8 @@ public class User
     {
         if(this.kwets.size() > 0)
         {
+            List kwts = new ArrayList(this.kwets);
+            Collections.sort(this.kwets);
             return this.kwets.get(0);
         }
         else
@@ -187,5 +208,30 @@ public class User
     public void setMentions(List<Kwet> kwetMentions)
     {
         this.mentions = kwetMentions;
+    }
+
+    public List<Role> getRoles()
+    {
+        return roles;
+    }
+
+    public void addRole(Role role)
+    {
+        this.roles.add(role);
+    }
+
+    public String getPassword()
+    {
+        return password;
+    }
+
+    public void setPassword(String password)
+    {
+        this.password = password;
+    }
+
+    public void removeKwet(Kwet kwet)
+    {
+        this.kwets.remove(kwet);
     }
 }

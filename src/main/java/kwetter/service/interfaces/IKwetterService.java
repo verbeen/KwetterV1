@@ -1,8 +1,6 @@
 package kwetter.service.interfaces;
 
-import kwetter.domain.Kwet;
-import kwetter.domain.Trend;
-import kwetter.domain.User;
+import kwetter.domain.*;
 
 import java.io.Serializable;
 import java.util.Calendar;
@@ -19,6 +17,10 @@ public interface IKwetterService extends Serializable
 
     void addKwet(User user, String content, Calendar cal, String from);
 
+    List<Kwet> getAllKwets();
+
+    void removeKwet(int id);
+
     List<Trend> getAllTrends();
 
     User logIn(String name, String pass);
@@ -29,9 +31,19 @@ public interface IKwetterService extends Serializable
 
     User getUser(String name);
 
-    User addUser(String name, String pass, String bio);
+    User addUser(String name, String pass, String email, String web, String bio);
 
     void addFollow(User follower, User following);
 
     void unFollow(User follower, User following);
+
+    Role addRole(String name);
+
+    void addRole(User user, Role role);
+
+    boolean addApplication(String name, String password, String email, String bio, String web);
+
+    Application getApplication(String name);
+
+    boolean activate(String name, String key);
 }

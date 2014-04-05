@@ -1,17 +1,17 @@
 package kwetter.service;
 
 import kwetter.dao.interfaces.*;
-import kwetter.domain.Kwet;
-import kwetter.domain.Trend;
-import kwetter.domain.User;
+import kwetter.domain.*;
 import kwetter.events.FollowEvent;
 import kwetter.events.KwetEvent;
 import kwetter.events.UserEvent;
 import kwetter.events.annotations.*;
-import kwetter.interceptors.annotations.VolgTrend;
 import kwetter.service.interfaces.IKwetterService;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.Resource;
 import javax.ejb.*;
+import javax.ejb.Timer;
 import javax.enterprise.event.Event;
 import javax.inject.Inject;
 import java.util.*;
@@ -20,7 +20,6 @@ import java.util.*;
  * Created by geh on 19-2-14.
  */
 @Stateless
-//@TransactionManagement(TransactionManagementType.BEAN)
 public class KwetterService implements IKwetterService
 {
     @Inject
@@ -31,6 +30,8 @@ public class KwetterService implements IKwetterService
     private UserDAO userDAO;
     @Inject
     private LogDAO logDAO;
+    @Inject
+    private SecurityDAO securityDAO;
     @Inject @Login
     private Event<UserEvent> loginEvent;
     @Inject @Logout
@@ -65,6 +66,22 @@ public class KwetterService implements IKwetterService
     }
 
     @Override
+    public List<Kwet> getAllKwets()
+    {
+        return this.postingDAO.getAllKwets();
+    }
+
+    @Override
+    public void removeKwet(int id)
+    {
+        Kwet kwet = this.postingDAO.getKwet(id);
+        if(kwet != null)
+        {
+            this.postingDAO.removeKwet(kwet);
+        }
+    }
+
+    @Override
     public void addKwet(User user, String content, String from)
     {
         Kwet kwet = new Kwet(user, content, new GregorianCalendar(), from);
@@ -87,7 +104,7 @@ public class KwetterService implements IKwetterService
             User user = userDAO.getUser(name);
             if(user == null)
             {
-                user = new User(name, pass, "wnegjnerjgksjkdgk");
+                user = new User(name, pass, "a@b.com", "jdhsfbgjsdf", "wnegjnerjgksjkdgk");
                 userDAO.addUser(user);
             }
 
@@ -101,9 +118,9 @@ public class KwetterService implements IKwetterService
     }
 
     @Override
-    public User addUser(String name, String pass, String bio)
+    public User addUser(String name, String pass, String email, String web, String bio)
     {
-        User user = new User(name, pass, bio);
+        User user = new User(name, pass, email, web, bio);
         this.userDAO.addUser(user);
         return user;
     }
@@ -146,5 +163,56 @@ public class KwetterService implements IKwetterService
     public void unFollow(User follower, User following)
     {
         this.unFollowEvent.fire(new FollowEvent(follower, following));
+    }
+
+    @Override
+    public Role addRole(String name)
+    {
+        Role result = new Role(name);
+        this.securityDAO.addRole(result);
+        return result;
+    }
+
+    @Override
+    public void addRole(User user, Role role)
+    {
+        this.securityDAO.addUserRole(user, role);
+    }
+
+    @Override
+    public boolean addApplication(String name, String password, String email, String bio, String web)
+    {
+        if(name == null || "".equals(name) || password == null || "".equals(password) ) return false;
+        if(this.getUser(name) == null && this.getApplication(name) == null)
+        {
+            Application app = new Application(name, password, email, bio, web);
+            this.userDAO.addApplication(app);
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    @Override
+    public Application getApplication(String name)
+    {
+        return this.userDAO.getApplication(name);
+    }
+
+    @Override
+    public boolean activate(String name, String key)
+    {
+        Application app = this.userDAO.getApplication(name);
+
+        if(app == null) return false;
+        if(!app.getActivationKey().equals(key)) return false;
+
+        User user = new User(app.getName(), app.getPassword(), app.getEmail(), app.getBio(), app.getWeb());
+        this.userDAO.removeApplication(name);
+        this.userDAO.addUser(user);
+
+        return true;
     }
 }

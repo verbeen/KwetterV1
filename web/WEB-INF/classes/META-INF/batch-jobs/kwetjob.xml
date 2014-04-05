@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<job id="kwetjob" xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+     version="1.0">
+    <properties>
+        <property name="kwetfile" value="kwetfile.json" />
+    </properties>
+    <step id="kwets">
+        <chunk checkpoint-policy="item" item-count="10">
+            <reader ref="kwetReader"></reader>
+            <processor ref="kwetProcessor"></processor>
+            <writer ref="kwetWriter"></writer>
+        </chunk>
+    </step>
+</job>

@@ -1,0 +1,19 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:c="http://java.sun.com/jsp/jstl/core"
+                xmlns:p="http://primefaces.org/ui" >
+    <h:form style="display: none">
+        <p:remoteCommand name="viewUser" actionListener="#{userBean.setViewingUser()}" oncomplete="window.location.reload()"/>
+    </h:form>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            Followers
+        </div>
+        <div class="panel-body" style="max-height: 265px; overflow-y: scroll;">
+            <h:form>
+                <a href="javascript:void(0)" class="btn btn-default" onclick="#{batchBean.start()}">Start batch job</a>
+            </h:form>
+        </div>
+    </div>
+</ui:composition>

@@ -15,5 +15,11 @@ public interface PostingDAO
 {
     List<Kwet> searchKwets(String search);
 
+    Kwet getKwet(int id);
+
     void addKwet(KwetEvent event);
+
+    List<Kwet> getAllKwets();
+
+    void removeKwet(Kwet kwet);
 }

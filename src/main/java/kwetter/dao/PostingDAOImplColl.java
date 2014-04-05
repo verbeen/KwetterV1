@@ -27,9 +27,6 @@ public class PostingDAOImplColl implements PostingDAO
     private ConcurrentHashMap<Integer, Kwet> kwets = new ConcurrentHashMap<Integer, Kwet>();
     private AtomicInteger ids = new AtomicInteger();
 
-    @PersistenceContext(unitName = "kwetterDB")
-    private EntityManager em;
-
     public PostingDAOImplColl()
     {
 
@@ -51,11 +48,29 @@ public class PostingDAOImplColl implements PostingDAO
     }
 
     @Override
+    public Kwet getKwet(int id)
+    {
+        return null;
+    }
+
+    @Override
     public void addKwet(@Observes @AddKwet KwetEvent evt)
     {
         Kwet kwet = evt.kwet;
         User user = evt.kwet.getPoster();
         this.kwets.put(this.ids.incrementAndGet(), kwet);
         user.addKwet(kwet);
+    }
+
+    @Override
+    public List<Kwet> getAllKwets()
+    {
+        return null;
+    }
+
+    @Override
+    public void removeKwet(Kwet kwet)
+    {
+
     }
 }

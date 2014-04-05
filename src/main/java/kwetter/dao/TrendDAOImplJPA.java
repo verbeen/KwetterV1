@@ -27,7 +27,7 @@ public class TrendDAOImplJPA extends TrendDAOImplColl
 {
     //@Resource
     //private UserTransaction ut;
-    @PersistenceContext(unitName = "kwetterDB")
+    @PersistenceContext(unitName = "kwetterdb")
     private EntityManager em;
 
     public TrendDAOImplJPA()
@@ -55,28 +55,17 @@ public class TrendDAOImplJPA extends TrendDAOImplColl
     @Override
     public void addTrends(@Observes @ProcessKwet KwetEvent event)
     {
-        //try
-        //{
-            //ut.begin();
-
-            Kwet kwet = event.kwet;
-            String[] split = kwet.getBody().split(" ");
-            for(String s : split)
+        Kwet kwet = event.kwet;
+        String[] split = kwet.getBody().split(" ");
+        for(String s : split)
+        {
+            if(s.length() > 1 && s.charAt(0) == "#".charAt(0))
             {
-                if(s.length() > 1 && s.charAt(0) == "#".charAt(0))
-                {
-                    this.addTrend(s, kwet);
-                }
+                this.addTrend(s, kwet);
             }
+        }
 
-            em.merge(kwet);
-
-            //ut.commit();
-        //}
-        //catch(Exception ex)
-        //{
-        //    ex.printStackTrace();
-        //}
+        em.merge(kwet);
     }
 
     @Override
@@ -91,9 +80,6 @@ public class TrendDAOImplJPA extends TrendDAOImplColl
         {
             trend = new Trend(name);
             em.persist(trend);
-
-            //trend = em.merge(trend);
-            //kwet = em.merge(kwet);
 
             trend.addKwet(kwet);
             kwet.addTrend(trend);

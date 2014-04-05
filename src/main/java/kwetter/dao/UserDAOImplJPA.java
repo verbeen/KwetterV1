@@ -1,6 +1,6 @@
 package kwetter.dao;
 
-import kwetter.dao.interfaces.UserDAO;
+import kwetter.domain.Application;
 import kwetter.domain.Kwet;
 import kwetter.domain.User;
 import kwetter.events.FollowEvent;
@@ -9,13 +9,23 @@ import kwetter.events.annotations.Follow;
 import kwetter.events.annotations.ProcessKwet;
 import kwetter.events.annotations.Unfollow;
 
-import javax.ejb.Stateless;
+import javax.annotation.Resource;
+import javax.ejb.*;
 import javax.enterprise.event.Observes;
 import javax.enterprise.inject.Alternative;
 import javax.enterprise.inject.Specializes;
+import javax.mail.Message;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import java.io.Serializable;
+import javax.persistence.Query;
+import javax.persistence.TemporalType;
+import java.util.GregorianCalendar;
+import java.util.List;
+import java.util.Random;
 
 /**
  * Created by geh on 26-2-14.
@@ -24,8 +34,10 @@ import java.io.Serializable;
 @Alternative @Specializes
 public class UserDAOImplJPA extends UserDAOImplColl
 {
-    @PersistenceContext(unitName = "kwetterDB")
+    @PersistenceContext(unitName = "kwetterdb")
     private EntityManager em;
+    @Resource(lookup="kwettermail")
+    private Session session;
 
     public UserDAOImplJPA()
     {
@@ -117,5 +129,57 @@ public class UserDAOImplJPA extends UserDAOImplColl
         following.removeFollower(follower);
         em.merge(follower);
         em.merge(following);
+    }
+
+    @Override
+    public void removeApplication(String name)
+    {
+        Application app = this.getApplication(name);
+        em.remove(app);
+    }
+
+    @Override
+    public void removeOldApplications()
+    {
+        GregorianCalendar time = new GregorianCalendar();
+        time.add(GregorianCalendar.HOUR, -1);
+
+        Query query = em.createQuery("select app from Applications app where app.time <= :time", Application.class);
+        query.setParameter("time", time, TemporalType.TIMESTAMP);
+
+        List<Application> apps = query.getResultList();
+        for(Application app : apps)
+        {
+            em.remove(app);
+        }
+    }
+
+    @Override
+    public Application getApplication(String name)
+    {
+        return em.find(Application.class, name);
+    }
+
+    @Override
+    public void addApplication(Application application)
+    {
+        application.setActivationKey("robuustekey" + new Random().nextInt(50));
+        em.persist(application);
+        try
+        {
+            Message msg = new MimeMessage(session);
+            msg.setSubject("Kwetter activation");
+            msg.setRecipient(Message.RecipientType.TO, new InternetAddress((application.getEmail()), application.getName()));
+            msg.setFrom(new InternetAddress(session.getProperty("mail.from")));
+
+            String activationlink = "http://localhost:8080/kwetter/activate.xhtml?name=" + application.getName() + "&key=" + application.getActivationKey();
+            msg.setText("Hey, " + application.getName() + ". Please press the following activation link to activate your account " + activationlink);
+
+            Transport.send(msg);
+        }
+        catch (Exception ex)
+        {
+            ex.printStackTrace();
+        }
     }
 }

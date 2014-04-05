@@ -59,24 +59,55 @@
                     <c:choose>
                         <c:when test="#{userBean.currentPage.equals('index')}">
                             <li class="active">
-                                <a href="javascript:void(0)">Home</a>
+                                <a href="javascript:void(0)">
+                                    Home
+                                </a>
                             </li>
                             <li>
-                                <a id="userLink" href="javascript:void(0)" onclick="setPage([{name: 'page', value: 'user'}]);">
+                                <a id="userLink" href="javascript:void(0)" onclick="setPage([{name: 'page', value: 'users'}]);">
                                     Users
                                 </a>
                             </li>
+                            <li>
+                                <a id="adminLink" href="javascript:void(0)" onclick="setPage([{name: 'page', value: 'admin'}]);">
+                                    Admin
+                                </a>
+                            </li>
                         </c:when>
-                        <c:otherwise>
+                        <c:when test="#{userBean.currentPage.equals('users')}">
                             <li>
                                 <a id="indexLink" href="javascript:void(0)" onclick="setPage([{name: 'page', value: 'index'}]);">
                                     Home
                                 </a>
                             </li>
                             <li class="active">
-                                <a href="javascript:void(0)">Users</a>
+                                <a href="javascript:void(0)">
+                                    Users
+                                </a>
                             </li>
-                        </c:otherwise>
+                            <li>
+                                <a id="adminLink" href="javascript:void(0)" onclick="setPage([{name: 'page', value: 'admin'}]);">
+                                    Admin
+                                </a>
+                            </li>
+                        </c:when>
+                        <c:when test="#{userBean.currentPage.equals('admin')}">
+                            <li>
+                                <a id="indexLink" href="javascript:void(0)" onclick="setPage([{name: 'page', value: 'index'}]);">
+                                    Home
+                                </a>
+                            </li>
+                            <li>
+                                <a id="userLink" href="javascript:void(0)" onclick="setPage([{name: 'page', value: 'users'}]);">
+                                    Users
+                                </a>
+                            </li>
+                            <li class="active">
+                                <a href="javascript:void(0)">
+                                    Admin
+                                </a>
+                            </li>
+                        </c:when>
                     </c:choose>
                 </ul>
                 <div class="navbar-form navbar-right">

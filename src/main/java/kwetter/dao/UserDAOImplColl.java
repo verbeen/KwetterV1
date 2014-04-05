@@ -1,6 +1,7 @@
 package kwetter.dao;
 
 import kwetter.dao.interfaces.UserDAO;
+import kwetter.domain.Application;
 import kwetter.domain.Kwet;
 import kwetter.domain.User;
 import kwetter.events.FollowEvent;
@@ -10,6 +11,7 @@ import kwetter.events.annotations.ProcessKwet;
 import kwetter.events.annotations.Unfollow;
 
 import javax.ejb.Stateless;
+import javax.ejb.Timer;
 import javax.enterprise.event.Observes;
 import javax.enterprise.inject.Default;
 import java.io.Serializable;
@@ -102,6 +104,30 @@ public class UserDAOImplColl implements UserDAO
     {
         follower.addFollowing(following);
         following.addFollower(follower);
+    }
+
+    @Override
+    public void addApplication(Application application)
+    {
+
+    }
+
+    @Override
+    public Application getApplication(String name)
+    {
+        return null;
+    }
+
+    @Override
+    public void removeApplication(String name)
+    {
+
+    }
+
+    @Override
+    public void removeOldApplications()
+    {
+
     }
 
     public void removeFollowing(User follower, User following)

@@ -19,8 +19,9 @@
         <datasource-mapping>
           <factory-entry name="NewPersistenceUnit" />
           <factory-entry name="kwetterDB" value="5b1d6cc3-653c-4c31-8d81-a714b5facfcb" />
+          <factory-entry name="kwetterdb" />
         </datasource-mapping>
-        <deploymentDescriptor name="persistence.xml" url="file://$MODULE_DIR$/src/main/resources/META-INF/persistence.xml" />
+        <deploymentDescriptor name="persistence.xml" url="file://$MODULE_DIR$/web/WEB-INF/classes/META-INF/persistence.xml" />
       </configuration>
     </facet>
   </component>
@@ -71,6 +72,9 @@
     <orderEntry type="library" name="Maven: org.javassist:javassist:3.16.1-GA" level="project" />
     <orderEntry type="library" name="Maven: com.google.code.gson:gson:2.2.4" level="project" />
     <orderEntry type="library" name="Maven: javax.transaction:jta:1.1" level="project" />
+    <orderEntry type="library" name="Maven: javax.batch:javax.batch-api:1.0" level="project" />
+    <orderEntry type="library" name="Maven: javax.mail:mail:1.4.7" level="project" />
+    <orderEntry type="library" name="Maven: javax.activation:activation:1.1" level="project" />
   </component>
 </module>
 

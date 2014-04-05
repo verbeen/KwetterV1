@@ -2,33 +2,74 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="45c6c20f-bb95-4291-b626-9bbd557e78df" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_persistence_org_eclipse_persistence_jpa_jpql_2_5_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/kwetter/dao/PostingDAOImplColl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/kwetter/dao/TrendDAOImplJPA.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/kwetter/dao/UserDAOImplJPA.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/kwetter/interceptors/annotations/VolgTrend.java" />
-      <change type="DELETED" beforePath="C:\Users\geh\Main\Documents\Projects\Fontys\S6\jea-esd\KwetterV1\.idea\libraries\Maven__org_eclipse_persistence_org_eclipse_persistence_jpa_jpql_2_5_2_M1.xml" afterPath="" />
-      <change type="MOVED" beforePath="C:\Users\geh\Main\Documents\Projects\Fontys\S6\jea-esd\KwetterV1\.idea\libraries\Maven__org_eclipse_persistence_org_eclipse_persistence_antlr_2_5_2_M1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_persistence_org_eclipse_persistence_jpa_2_5_1.xml" />
-      <change type="MOVED" beforePath="C:\Users\geh\Main\Documents\Projects\Fontys\S6\jea-esd\KwetterV1\.idea\libraries\Maven__org_eclipse_persistence_org_eclipse_persistence_asm_2_5_2_M1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_persistence_org_eclipse_persistence_antlr_2_5_1.xml" />
-      <change type="MOVED" beforePath="C:\Users\geh\Main\Documents\Projects\Fontys\S6\jea-esd\KwetterV1\.idea\libraries\Maven__org_eclipse_persistence_org_eclipse_persistence_core_2_5_2_M1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_persistence_org_eclipse_persistence_core_2_5_1.xml" />
-      <change type="MOVED" beforePath="C:\Users\geh\Main\Documents\Projects\Fontys\S6\jea-esd\KwetterV1\.idea\libraries\Maven__org_eclipse_persistence_org_eclipse_persistence_jpa_2_5_2_M1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_persistence_org_eclipse_persistence_asm_2_5_1.xml" />
-      <change type="MOVED" beforePath="C:\Users\geh\Main\Documents\Projects\Fontys\S6\jea-esd\KwetterV1\src\main\java\kwetter\dao\PostingDAOImpl.java" afterPath="$PROJECT_DIR$/src/main/java/kwetter/dao/PostingDAOImplJPA.java" />
-      <change type="MOVED" beforePath="C:\Users\geh\Main\Documents\Projects\Fontys\S6\jea-esd\KwetterV1\src\main\java\kwetter\dao\TrendDAOImpl.java" afterPath="$PROJECT_DIR$/src/main/java/kwetter/dao/TrendDAOImplColl.java" />
-      <change type="MOVED" beforePath="C:\Users\geh\Main\Documents\Projects\Fontys\S6\jea-esd\KwetterV1\src\main\java\kwetter\dao\UserDAOImpl.java" afterPath="$PROJECT_DIR$/src/main/java/kwetter/dao/UserDAOImplColl.java" />
-      <change type="MOVED" beforePath="C:\Users\geh\Main\Documents\Projects\Fontys\S6\jea-esd\KwetterV1\src\main\java\kwetter\service\KwetterServiceDAO.java" afterPath="$PROJECT_DIR$/src/main/java/kwetter/service/interfaces/IKwetterService.java" />
-      <change type="MOVED" beforePath="C:\Users\geh\Main\Documents\Projects\Fontys\S6\jea-esd\KwetterV1\src\main\java\kwetter\service\KwetterServiceDAOImpl.java" afterPath="$PROJECT_DIR$/src/main/java/kwetter/service/KwetterService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/kwetter/domain/Application.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/kwetter/beans/BatchBean.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebAPI/src/main/java/exceptions/EntityNotFoundMapper.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebAPI/src/main/java/exceptions/IllegalArgumentMapper.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/kwetter/batches/ItemNumberCheckpoint.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/kwetter/batches/dtos/KwetDTO.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/kwetter/batches/KwetProcessor.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/kwetter/batches/KwetReader.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/kwetter/batches/KwetWriter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/kwetter/service/KwetterScheduler.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_2_3.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_2_3.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_2_3.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_jaxrs_jackson_jaxrs_base_2_2_3.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_jaxrs_jackson_jaxrs_json_provider_2_2_3.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_module_jackson_module_jaxb_annotations_2_2_3.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_batch_javax_batch_api_1_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_ws_rs_javax_ws_rs_api_2_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/kwetter/beans/ModeratorBean.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/kwetter/beans/RegisterBean.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/kwetter/domain/Role.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/kwetter/dao/interfaces/SecurityDAO.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/kwetter/dao/SecurityDAOImplJPA.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebAPI/src/main/java/domain/User.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebAPI/src/main/java/hello/UserService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/activate.xhtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/admin.xhtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/components/batch.xhtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/glassfish-web.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebAPI/web/resources/jquery.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebAPI/web/resources/jquery.json2html.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebAPI/web/resources/json.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebAPI/web/resources/json2html.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebAPI/web/resources/jsontable.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/META-INF/batch-jobs/kwetjob.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/loginerror.xhtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/components/moderate.xhtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebAPI/src/main/java/META-INF/persistence.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebAPI/pom.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/register.xhtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/webapi.xml" />
+      <change type="MOVED" beforePath="C:\Users\geh\Main\Documents\Projects\Fontys\S6\jea-esd\KwetterV1\src\main\resources\META-INF\persistence.xml" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/META-INF/persistence.xml" />
+      <change type="MOVED" beforePath="C:\Users\geh\Main\Documents\Projects\Fontys\S6\jea-esd\KwetterV1\web\user.xhtml" afterPath="$PROJECT_DIR$/web/users.xhtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/kwetter/service/interfaces/IKwetterService.java" afterPath="$PROJECT_DIR$/src/main/java/kwetter/service/interfaces/IKwetterService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/kwetter/service/InitBean.java" afterPath="$PROJECT_DIR$/src/main/java/kwetter/service/InitBean.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/kwetter/domain/Kwet.java" afterPath="$PROJECT_DIR$/src/main/java/kwetter/domain/Kwet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/kwetter/beans/KwetBean.java" afterPath="$PROJECT_DIR$/src/main/java/kwetter/beans/KwetBean.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/kwetter/service/KwetterService.java" afterPath="$PROJECT_DIR$/src/main/java/kwetter/service/KwetterService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/KwetterV1.iml" afterPath="$PROJECT_DIR$/KwetterV1.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/kwetter/beans/TrendsBean.java" afterPath="$PROJECT_DIR$/src/main/java/kwetter/beans/TrendsBean.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/kwetter/dao/interfaces/PostingDAO.java" afterPath="$PROJECT_DIR$/src/main/java/kwetter/dao/interfaces/PostingDAO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/kwetter/dao/PostingDAOImplColl.java" afterPath="$PROJECT_DIR$/src/main/java/kwetter/dao/PostingDAOImplColl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/kwetter/dao/PostingDAOImplJPA.java" afterPath="$PROJECT_DIR$/src/main/java/kwetter/dao/PostingDAOImplJPA.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/kwetter/domain/Trend.java" afterPath="$PROJECT_DIR$/src/main/java/kwetter/domain/Trend.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/kwetter/dao/TrendDAOImplJPA.java" afterPath="$PROJECT_DIR$/src/main/java/kwetter/dao/TrendDAOImplJPA.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/kwetter/domain/User.java" afterPath="$PROJECT_DIR$/src/main/java/kwetter/domain/User.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/kwetter/beans/UserBean.java" afterPath="$PROJECT_DIR$/src/main/java/kwetter/beans/UserBean.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/kwetter/interceptors/VolgTrendInterceptor.java" afterPath="$PROJECT_DIR$/src/main/java/kwetter/interceptors/VolgTrendInterceptor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/beans.xml" afterPath="$PROJECT_DIR$/web/WEB-INF/beans.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/kwetter/dao/interfaces/UserDAO.java" afterPath="$PROJECT_DIR$/src/main/java/kwetter/dao/interfaces/UserDAO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/kwetter/dao/UserDAOImplColl.java" afterPath="$PROJECT_DIR$/src/main/java/kwetter/dao/UserDAOImplColl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/kwetter/dao/UserDAOImplJPA.java" afterPath="$PROJECT_DIR$/src/main/java/kwetter/dao/UserDAOImplJPA.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/templates/header-member.xhtml" afterPath="$PROJECT_DIR$/web/templates/header-member.xhtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/templates/header-visitor.xhtml" afterPath="$PROJECT_DIR$/web/templates/header-visitor.xhtml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/kwetter.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/kwetter.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/master.xhtml" afterPath="$PROJECT_DIR$/web/master.xhtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/components/timeline.xhtml" afterPath="$PROJECT_DIR$/web/components/timeline.xhtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="KwetterV1.iws" />
@@ -85,7 +126,22 @@
     </breakpoint_any>
     <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
-      <breakpoint url="file://$PROJECT_DIR$/src/main/java/kwetter/dao/PostingDAOImplColl.java" line="55" class="kwetter.dao.PostingDAOImplColl" package="kwetter.dao">
+      <breakpoint url="file://$PROJECT_DIR$/src/main/java/kwetter/dao/PostingDAOImplColl.java" line="58" class="kwetter.dao.PostingDAOImplColl" package="kwetter.dao">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/main/java/kwetter/dao/UserDAOImplJPA.java" line="152" class="kwetter.dao.UserDAOImplJPA" package="kwetter.dao">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -110,154 +166,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="KwetterService.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/kwetter/service/KwetterService.java">
+      <file leaf-file-name="hello.jsp" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/WebAPI/web/hello.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="19" selection-start="965" selection-end="965" vertical-scroll-proportion="0.0" vertical-offset="481" max-vertical-offset="2875">
+            <state line="42" column="17" selection-start="1367" selection-end="1367" vertical-scroll-proportion="0.64761907" vertical-offset="510" max-vertical-offset="3902">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserDAOImplColl.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/kwetter/dao/UserDAOImplColl.java">
+      <file leaf-file-name="UserService.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WebAPI/src/main/java/hello/UserService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="47" selection-start="609" selection-end="609" vertical-scroll-proportion="0.0" vertical-offset="66" max-vertical-offset="2229">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="User.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/kwetter/domain/User.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="107" column="22" selection-start="2320" selection-end="2320" vertical-scroll-proportion="0.0" vertical-offset="1676" max-vertical-offset="3559">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserDAOImplJPA.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/kwetter/dao/UserDAOImplJPA.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="3" selection-start="627" selection-end="627" vertical-scroll-proportion="0.0" vertical-offset="1496" max-vertical-offset="2433">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LogDAOImpl.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/kwetter/dao/LogDAOImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="13" selection-start="739" selection-end="739" vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="903">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PostingDAO.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/kwetter/dao/interfaces/PostingDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="9" selection-start="328" selection-end="328" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="648">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TrendDAO.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/kwetter/dao/interfaces/TrendDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="9" selection-start="251" selection-end="251" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="699">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TrendDAOImplJPA.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/kwetter/dao/TrendDAOImplJPA.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="15" selection-start="731" selection-end="731" vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="2620">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserDAO.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/kwetter/dao/interfaces/UserDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="8" selection-start="372" selection-end="372" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="852">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="persistence.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="82" selection-start="908" selection-end="908" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="614">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="KwetBean.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/kwetter/beans/KwetBean.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="73" column="73" selection-start="2109" selection-end="2109" vertical-scroll-proportion="0.0" vertical-offset="969" max-vertical-offset="1634">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="beans.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/beans.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="56" selection-start="568" selection-end="568" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="546">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PostingDAOImplColl.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/kwetter/dao/PostingDAOImplColl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="53" selection-start="679" selection-end="679" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="1362">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="VolgTrend.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/kwetter/interceptors/annotations/VolgTrend.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="45" selection-start="353" selection-end="353" vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="580">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="VolgTrendInterceptor.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/kwetter/interceptors/VolgTrendInterceptor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="5" selection-start="1009" selection-end="1009" vertical-scroll-proportion="0.0" vertical-offset="447" max-vertical-offset="1090">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PostingDAOImplJPA.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/kwetter/dao/PostingDAOImplJPA.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="46" column="0" selection-start="1172" selection-end="1172" vertical-scroll-proportion="0.33333334" vertical-offset="668" max-vertical-offset="1226">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TrendDAOImplColl.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/kwetter/dao/TrendDAOImplColl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="49" selection-start="602" selection-end="602" vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="1889">
+            <state line="82" column="0" selection-start="2949" selection-end="2949" vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="1786">
               <folding />
             </state>
           </provider>
@@ -276,57 +197,57 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/kwetter/events/FollowEvent.java" />
-        <option value="$PROJECT_DIR$/src/main/java/kwetter/database/DatabaseManager.java" />
-        <option value="$PROJECT_DIR$/src/main/java/kwetter/database/DatabaseManagerDAOImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/kwetter/dao/interfaces/DataManagerDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/kwetter/dao/DataManagerDAOImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/kwetter/dao/interfaces/TrendDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/kwetter/dao/interfaces/MentionDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/kwetter/dao/MentionDAOImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/META-INF/persistence.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/kwetter/domain/Mention.java" />
-        <option value="$PROJECT_DIR$/src/main/java/kwetter/beans/MentionsBean.java" />
-        <option value="$PROJECT_DIR$/web/index.xhtml" />
-        <option value="$PROJECT_DIR$/web/user.xhtml" />
+        <option value="$PROJECT_DIR$/src/main/java/kwetter/dao/interfaces/SecurityDAO.java" />
+        <option value="$PROJECT_DIR$/web/templates/header-visitor.xhtml" />
+        <option value="$PROJECT_DIR$/web/users.xhtml" />
         <option value="$PROJECT_DIR$/web/master.xhtml" />
-        <option value="$PROJECT_DIR$/src/main/java/kwetter/dao/interfaces/PostingDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/kwetter/service/KwetterService2.java" />
-        <option value="$PROJECT_DIR$/src/main/java/kwetter/beans/TrendsBean.java" />
+        <option value="$PROJECT_DIR$/web/index.xhtml" />
         <option value="$PROJECT_DIR$/web/templates/header-member.xhtml" />
-        <option value="$PROJECT_DIR$/web/components/happening.xhtml" />
-        <option value="$PROJECT_DIR$/web/components/recent.xhtml" />
-        <option value="$PROJECT_DIR$/web/components/followinglist.xhtml" />
-        <option value="$PROJECT_DIR$/web/components/followerlist.xhtml" />
-        <option value="$PROJECT_DIR$/web/components/tweetlist.xhtml" />
-        <option value="$PROJECT_DIR$/src/main/java/kwetter/beans/KwetBean.java" />
-        <option value="$PROJECT_DIR$/src/main/java/kwetter/service/initbean.java" />
-        <option value="$PROJECT_DIR$/src/main/java/kwetter/dao/LogDAOImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/kwetter/beans/UserBean.java" />
-        <option value="$PROJECT_DIR$/src/main/java/kwetter/service/InitBean.java" />
-        <option value="$PROJECT_DIR$/src/main/java/kwetter/dao/interfaces/UserDAO.java" />
-        <option value="$PROJECT_DIR$/web/components/timeline.xhtml" />
-        <option value="$PROJECT_DIR$/src/main/java/kwetter/dao/PostingDAOImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/kwetter/dao/TrendDAOImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/kwetter/dao/UserDAOImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/kwetter/service/KwetterServiceDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/kwetter/service/IKwetterService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/kwetter/service/KwetterServiceDAOImpl.java" />
+        <option value="$PROJECT_DIR$/web/components/batch.xhtml" />
+        <option value="$PROJECT_DIR$/src/main/java/kwetter/batches/KwetWriter.java" />
+        <option value="$PROJECT_DIR$/web/register.xhtml" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/classes/META-INF/persistence.xml" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/kwetter/domain/User.java" />
-        <option value="$PROJECT_DIR$/src/main/java/kwetter/domain/Kwet.java" />
-        <option value="$PROJECT_DIR$/src/main/java/kwetter/domain/Trend.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/beans.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/kwetter/interceptors/annotations/VolgTrend.java" />
-        <option value="$PROJECT_DIR$/src/main/java/kwetter/interceptors/VolgTrendInterceptor.java" />
-        <option value="$PROJECT_DIR$/src/main/java/kwetter/service/KwetterService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/kwetter/beans/RegisterBean.java" />
+        <option value="$PROJECT_DIR$/web/activate.xhtml" />
+        <option value="$PROJECT_DIR$/src/main/java/kwetter/service/InitBean.java" />
+        <option value="$PROJECT_DIR$/web/admin.xhtml" />
+        <option value="$PROJECT_DIR$/src/main/java/kwetter/dao/interfaces/PostingDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/kwetter/service/interfaces/IKwetterService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/kwetter/beans/ModeratorBean.java" />
         <option value="$PROJECT_DIR$/src/main/java/kwetter/dao/PostingDAOImplColl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/kwetter/dao/TrendDAOImplColl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/kwetter/dao/UserDAOImplColl.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/glassfish-web.xml" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/web/components/moderate.xhtml" />
+        <option value="$PROJECT_DIR$/src/main/java/kwetter/domain/Kwet.java" />
+        <option value="$PROJECT_DIR$/src/main/java/kwetter/domain/User.java" />
+        <option value="$PROJECT_DIR$/src/main/java/kwetter/domain/Trend.java" />
         <option value="$PROJECT_DIR$/src/main/java/kwetter/dao/PostingDAOImplJPA.java" />
-        <option value="$PROJECT_DIR$/src/main/java/kwetter/dao/TrendDAOImplJPA.java" />
+        <option value="$PROJECT_DIR$/src/main/java/kwetter/domain/Application.java" />
+        <option value="$PROJECT_DIR$/src/main/java/kwetter/service/TimerService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/kwetter/dao/UserDAOImplColl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/kwetter/dao/interfaces/UserDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/kwetter/service/KwetterService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/kwetter/service/KwetterScheduler.java" />
+        <option value="$PROJECT_DIR$/WebAPI/src/main/java/HelloWorld.java" />
+        <option value="$PROJECT_DIR$/WebAPI/web/resources/jquery.js" />
+        <option value="$PROJECT_DIR$/WebAPI/web/index.jsp" />
+        <option value="$PROJECT_DIR$/WebAPI/web/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/WebAPI/src/main/java/META-INF/persistence.xml" />
+        <option value="$PROJECT_DIR$/WebAPI/src/main/java/hello/Service.java" />
+        <option value="$PROJECT_DIR$/WebAPI/pom.xml" />
+        <option value="$PROJECT_DIR$/WebAPI/src/main/java/hello/HelloWorld.java" />
+        <option value="$PROJECT_DIR$/WebAPI/src/main/java/hello/ApiService.java" />
+        <option value="$PROJECT_DIR$/WebAPI/src/main/java/domain/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/kwetter/dao/UserDAOImplJPA.java" />
+        <option value="$PROJECT_DIR$/WebAPI/web/resources/json.js" />
+        <option value="$PROJECT_DIR$/WebAPI/web/resources/jsontable.js" />
+        <option value="$PROJECT_DIR$/WebAPI/src/main/java/exceptions/ExceptionMapper.java" />
+        <option value="$PROJECT_DIR$/WebAPI/src/main/java/exceptions/EntityNotFoundMapper.java" />
+        <option value="$PROJECT_DIR$/WebAPI/src/main/java/exceptions/IllegalArgumentMapper.java" />
+        <option value="$PROJECT_DIR$/WebAPI/src/main/java/hello/UserService.java" />
+        <option value="$PROJECT_DIR$/WebAPI/web/hello.jsp" />
       </list>
     </option>
   </component>
@@ -349,6 +270,34 @@
         <option name="importAutomatically" value="true" />
       </MavenImportingSettings>
     </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="KwetterV1" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="KwetterV1" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Plugins" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$PluginsNode" />
+        </PATH_ELEMENT>
+      </PATH>
+    </treeState>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
@@ -481,6 +430,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -488,10 +439,6 @@
               <option name="myItemId" value="KwetterV1" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -510,6 +457,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="KwetterV1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebAPI" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="KwetterV1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="KwetterV1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebAPI" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -527,39 +492,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WEB-INF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="KwetterV1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="KwetterV1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="KwetterV1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="KwetterV1" />
+              <option name="myItemId" value="WebAPI" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -581,21 +514,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="KwetterV1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="KwetterV1" />
+              <option name="myItemId" value="WebAPI" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -610,6 +529,32 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="KwetterV1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebAPI" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="KwetterV1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="KwetterV1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebAPI" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -621,7 +566,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
+              <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -639,6 +584,10 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="WebAPI" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -651,11 +600,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="kwetter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="service" />
+              <option name="myItemId" value="hello" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -669,6 +614,10 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="WebAPI" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -681,11 +630,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="kwetter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="interceptors" />
+              <option name="myItemId" value="exceptions" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -699,37 +644,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="kwetter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="interceptors" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="annotations" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="KwetterV1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="KwetterV1" />
+              <option name="myItemId" value="WebAPI" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -742,36 +657,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="kwetter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="KwetterV1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="KwetterV1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="kwetter" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -792,6 +677,38 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="KwetterV1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="KwetterV1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="KwetterV1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="KwetterV1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
@@ -802,10 +719,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="kwetter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dao" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -836,47 +749,11 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="dao" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="interfaces" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="KwetterV1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="KwetterV1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="kwetter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="beans" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -903,7 +780,7 @@
     <property name="OverrideImplement.combined" value="true" />
     <property name="OverrideImplement.overriding.sorted" value="false" />
     <property name="DefaultHtmlFileTemplate" value="Xhtml" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/Workshop/pom.xml" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/kwetfile.json" />
     <property name="dynamic.classpath" value="false" />
   </component>
   <component name="RecentsManager">
@@ -914,6 +791,8 @@
       <recent name="kwetter.helpers" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\geh\Main\Documents\Projects\Fontys\S6\jea-esd\KwetterV1\WebAPI\web\resources" />
+      <recent name="C:\Users\geh\Main\Documents\Projects\Fontys\S6\jea-esd\KwetterV1\src\main\java\kwetter\batches" />
       <recent name="C:\Users\geh\Main\Documents\Projects\Fontys\S6\jea-esd\KwetterV1\web\components" />
       <recent name="C:\Users\geh\Main\Documents\Projects\Fontys\S6\jea-esd\KwetterV1\web\templates" />
     </key>
@@ -926,14 +805,14 @@
       <recent name="kwetter.events.annotations" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\geh\Main\Documents\Projects\Fontys\S6\jea-esd\KwetterV1\src\main\resources\META-INF" />
       <recent name="C:\Users\geh\Main\Documents\Projects\Fontys\S6\jea-esd\KwetterV1\web" />
-      <recent name="C:\Users\geh\Main\Documents\Projects\Fontys\S6\jea-esd\KwetterV1\web\components" />
-      <recent name="C:\Users\geh\Main\Documents\Projects\Fontys\S6\jea-esd\KwetterV1\web\faces" />
+      <recent name="C:\Users\geh\Main\Documents\Projects\Fontys\S6\jea-esd\KwetterV1\web\resources" />
       <recent name="C:\Users\geh\Main\Documents\Projects\Fontys\S6\jea-esd\KwetterV1\web\WEB-INF" />
+      <recent name="C:\Users\geh\Main\Documents\Projects\Fontys\S6\jea-esd\KwetterV1\web\WEB-INF\classes\META-INF\batch-jobs" />
+      <recent name="C:\Users\geh\Main\Documents\Projects\Fontys\S6\jea-esd\KwetterV1\web\WEB-INF\classes" />
     </key>
   </component>
-  <component name="RunManager" selected="GlassFish Server.Glassfish 4.0.1">
+  <component name="RunManager" selected="GlassFish Server.GlassFish 4.0.1 webapi">
     <configuration default="true" type="GrailsRunConfigurationType" factoryName="Grails" singleton="true">
       <module name="" />
       <setting name="vmparams" value="" />
@@ -956,6 +835,18 @@
       <option name="SHMEM_ADDRESS" value="javadebug" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="5005" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JBossConfiguration" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
+      <deployment />
+      <server-settings>
+        <option name="SERVER" value="" />
+        <option name="BINDING_SET_NAME" value="" />
+        <option name="USERNAME" value="" />
+        <option name="PASSWORD" value="" />
+      </server-settings>
+      <predefined_log_file id="JBoss" enabled="true" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <method />
     </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
@@ -1240,7 +1131,7 @@
         </option>
       </method>
     </configuration>
-    <configuration default="false" name="Glassfish 4.0.1" type="GlassfishConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="GlassFish 4.0.1.b03" ALTERNATIVE_JRE_ENABLED="false" ALTERNATIVE_JRE_PATH="">
+    <configuration default="false" name="Glassfish 4.0.1 kwetter" type="GlassfishConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="GlassFish 4.0.1.b03" ALTERNATIVE_JRE_ENABLED="false" ALTERNATIVE_JRE_PATH="">
       <deployment>
         <artifact name="kwetter">
           <settings>
@@ -1316,9 +1207,164 @@
         </option>
       </method>
     </configuration>
-    <list size="2">
+    <configuration default="false" name="GlassFish 4.0.1 webapi" type="GlassfishConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="GlassFish 4.0.1.b03" ALTERNATIVE_JRE_ENABLED="false" ALTERNATIVE_JRE_PATH="">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/webapi/hello.jsp" />
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="webapi">
+          <settings>
+            <option name="contextRoot" value="/webapi" />
+            <option name="defaultContextRoot" value="false" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="DOMAIN" value="domain1" />
+        <option name="PRESERVE" value="false" />
+        <option name="VIRTUAL_SERVER" />
+        <option name="USERNAME" value="admin" />
+        <option name="PASSWORD" value="" />
+      </server-settings>
+      <predefined_log_file id="GlassFish" enabled="true" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <RunnerSettings RunnerId="Cover" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="9009" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method>
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="webapi" />
+        </option>
+      </method>
+    </configuration>
+    <configuration default="false" name="WildFly 8.0.0 Final" type="JBossConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="JBoss 8.0.0.Final" ALTERNATIVE_JRE_ENABLED="false" ALTERNATIVE_JRE_PATH="">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8081/kwetter" />
+      <option name="COMMON_VM_ARGUMENTS" value=" -Djboss.socket.binding.port-offset=1" />
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="kwetter">
+          <settings />
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="SERVER" />
+        <option name="BINDING_SET_NAME" value="" />
+        <option name="USERNAME" value="manager" />
+        <option name="PASSWORD" value="aidas123" />
+      </server-settings>
+      <predefined_log_file id="JBoss" enabled="true" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <RunnerSettings RunnerId="Cover" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="25000" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="false" />
+          <option name="SCRIPT" value="$PROJECT_DIR$/../../../../../../Apps/WildFly/wildfly-8.0.0.Final/bin/standalone.bat" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value=" -c standalone-full.xml" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="false" />
+          <option name="SCRIPT" value="$PROJECT_DIR$/../../../../../../Apps/WildFly/wildfly-8.0.0.Final/bin/standalone.bat" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value=" -c standalone-full.xml" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="false" />
+          <option name="SCRIPT" value="$PROJECT_DIR$/../../../../../../Apps/WildFly/wildfly-8.0.0.Final/bin/standalone.bat" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value=" -c standalone-full.xml" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method>
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="kwetter" />
+        </option>
+      </method>
+    </configuration>
+    <list size="4">
       <item index="0" class="java.lang.String" itemvalue="GlassFish Server.GlassFish 4.0.0" />
-      <item index="1" class="java.lang.String" itemvalue="GlassFish Server.Glassfish 4.0.1" />
+      <item index="1" class="java.lang.String" itemvalue="GlassFish Server.Glassfish 4.0.1 kwetter" />
+      <item index="2" class="java.lang.String" itemvalue="GlassFish Server.GlassFish 4.0.1 webapi" />
+      <item index="3" class="java.lang.String" itemvalue="JBoss Server.WildFly 8.0.0 Final" />
     </list>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
@@ -1369,17 +1415,27 @@
       <workItem from="1395179230740" duration="13634000" />
       <workItem from="1395217948273" duration="9779000" />
       <workItem from="1395310251269" duration="28000" />
-      <workItem from="1395665329474" duration="12766000" />
+      <workItem from="1395665329474" duration="13512000" />
+      <workItem from="1395680640805" duration="2575000" />
+      <workItem from="1395732789378" duration="16980000" />
+      <workItem from="1395826556120" duration="3532000" />
+      <workItem from="1396262059353" duration="16164000" />
+      <workItem from="1396335856075" duration="26988000" />
+      <workItem from="1396420359833" duration="60965000" />
     </task>
     <task id="LOCAL-00001" summary="jpa added">
       <created>1395259374642</created>
       <updated>1395259374642</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Interceptors fixed, alternatives added, JPA af.&#10;">
+      <created>1395678627526</created>
+      <updated>1395678627526</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="272720000" />
+    <option name="totallyTimeSpent" value="400670000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1409,32 +1465,32 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32852563" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.37637362" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32930514" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32852563" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.41025642" sideWeight="0.3081571" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40224358" sideWeight="0.3081571" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32852563" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32930514" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.10876133" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32852563" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32852563" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.55163044" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25528702" sideWeight="0.55163044" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4599359" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32852563" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32852563" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.41025642" sideWeight="0.6918429" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39102563" sideWeight="0.6918429" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.4456522" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32852563" sideWeight="0.6623867" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32692307" sideWeight="0.6820242" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32930514" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32852563" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -1484,7 +1540,8 @@
       <TodoPanelSettings />
     </option>
     <MESSAGE value="jpa added" />
-    <option name="LAST_COMMIT_MESSAGE" value="jpa added" />
+    <MESSAGE value="Interceptors fixed, alternatives added, JPA af.&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Interceptors fixed, alternatives added, JPA af.&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1494,318 +1551,370 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/kwetter/events/annotations/AddKwet.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/kwetter/dao/SecurityDAOImplJPA.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="0" selection-start="268" selection-end="388" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="610" />
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../../../../../Apps/Java/jdk1.7.0_51/src.zip!/java/lang/Thread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="743" column="0" selection-start="27685" selection-end="27685" vertical-scroll-proportion="0.0" vertical-offset="12519" max-vertical-offset="35290" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/kwetter/dao/interfaces/LogDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="38" selection-start="207" selection-end="207" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="525" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="17" selection-start="737" selection-end="737" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="664">
+        <state line="18" column="15" selection-start="410" selection-end="410" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="874">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/kwetter/events/UserEvent.java">
+    <entry file="file://$PROJECT_DIR$/web/components/batch.xhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="5" selection-start="177" selection-end="177" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="596">
+        <state line="0" column="0" selection-start="0" selection-end="893" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="617">
           <folding />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/resources/user.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/user.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="81" selection-start="429" selection-end="429" vertical-scroll-proportion="13.730769" vertical-offset="459" max-vertical-offset="1250" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/templates/contents.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="17" selection-start="241" selection-end="241" vertical-scroll-proportion="-2.6153846" vertical-offset="0" max-vertical-offset="489" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/templates/footer.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="14" selection-start="498" selection-end="498" vertical-scroll-proportion="0.64761907" vertical-offset="0" max-vertical-offset="570" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/index.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="85" selection-start="524" selection-end="524" vertical-scroll-proportion="0.43174604" vertical-offset="0" max-vertical-offset="1148" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/templates/header-visitor.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="67" selection-start="484" selection-end="484" vertical-scroll-proportion="0.5629139" vertical-offset="0" max-vertical-offset="863" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/templates/template.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="34" selection-start="342" selection-end="359" vertical-scroll-proportion="0.32380953" vertical-offset="0" max-vertical-offset="927" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/components/stats.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="67" selection-start="1129" selection-end="1131" vertical-scroll-proportion="0.78807944" vertical-offset="0" max-vertical-offset="574" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/components/following.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="69" selection-start="362" selection-end="362" vertical-scroll-proportion="-3.2692308" vertical-offset="0" max-vertical-offset="638" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/components/followerlist.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="90" selection-start="1037" selection-end="1037" vertical-scroll-proportion="0.75555557" vertical-offset="51" max-vertical-offset="842" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/components/followinglist.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="42" selection-start="702" selection-end="702" vertical-scroll-proportion="0.43174604" vertical-offset="85" max-vertical-offset="842" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/components/recent.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="70" selection-start="553" selection-end="553" vertical-scroll-proportion="0.16887417" vertical-offset="85" max-vertical-offset="1033" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/components/happening.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="79" selection-start="1092" selection-end="1092" vertical-scroll-proportion="0.5629139" vertical-offset="204" max-vertical-offset="1186" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/templates/header-member.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="87" selection-start="1058" selection-end="1058" vertical-scroll-proportion="0.33774835" vertical-offset="357" max-vertical-offset="1985" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/master.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="17" selection-start="294" selection-end="294" vertical-scroll-proportion="-0.53968257" vertical-offset="255" max-vertical-offset="672" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/kwetter/events/KwetEvent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="0" selection-start="204" selection-end="204" vertical-scroll-proportion="0.0" vertical-offset="125" max-vertical-offset="596">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/components/trends.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="40" selection-start="865" selection-end="865" vertical-scroll-proportion="-6.5384617" vertical-offset="85" max-vertical-offset="761" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/KwetterV1.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1604" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/components/tweetlist.xhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="88" selection-start="814" selection-end="814" vertical-scroll-proportion="-0.65384614" vertical-offset="187" max-vertical-offset="741" />
+        <state line="22" column="13" selection-start="484" selection-end="1207" vertical-scroll-proportion="-10.461538" vertical-offset="102" max-vertical-offset="753">
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/components/userinfo.xhtml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/kwetter/beans/BatchBean.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="28" selection-start="496" selection-end="496" vertical-scroll-proportion="-5.230769" vertical-offset="0" max-vertical-offset="1221" />
+        <state line="14" column="1" selection-start="333" selection-end="333" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="823">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/kwetter/beans/UserBean.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="37" selection-start="759" selection-end="759" vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="2975">
+        <state line="78" column="29" selection-start="1861" selection-end="1861" vertical-scroll-proportion="0.0" vertical-offset="1175" max-vertical-offset="3890">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/kwetter/beans/TrendsBean.java">
+    <entry file="jar://$PROJECT_DIR$/../../../../../../Apps/Glassfish/glassfish/modules/javax.servlet-api.jar!/javax/servlet/http/HttpServletRequest.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="13" selection-start="336" selection-end="336" vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="561">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/kwetter/service/InitBean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="17" selection-start="2605" selection-end="2605" vertical-scroll-proportion="0.0" vertical-offset="1207" max-vertical-offset="1292">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/faces-config.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="402">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="com.intellij.jsf.yfilesGraph.editor.FacesNavigationFileEditorProvider">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="44" selection-start="979" selection-end="979" vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="2297">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/kwetter/domain/Kwet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="65" selection-start="790" selection-end="819" vertical-scroll-proportion="0.6461988" vertical-offset="204" max-vertical-offset="3487">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/kwetter/domain/Trend.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="45" selection-start="336" selection-end="336" vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="1124">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/components/timeline.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="37" selection-start="1600" selection-end="1600" vertical-scroll-proportion="-15.692307" vertical-offset="0" max-vertical-offset="1268">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/kwetter/service/interfaces/IKwetterService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="17" selection-start="247" selection-end="247" vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="1005">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/kwetter/interceptors/VolgTrendInterceptor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="5" selection-start="1009" selection-end="1009" vertical-scroll-proportion="0.0" vertical-offset="447" max-vertical-offset="1090">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/kwetter/domain/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="107" column="22" selection-start="2320" selection-end="2320" vertical-scroll-proportion="0.0" vertical-offset="1676" max-vertical-offset="3559">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/kwetter/interceptors/annotations/VolgTrend.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="45" selection-start="353" selection-end="353" vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="580">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="82" selection-start="908" selection-end="908" vertical-scroll-proportion="0.0" vertical-offset="17" max-vertical-offset="614">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/beans.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="56" selection-start="568" selection-end="568" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="546">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/kwetter/beans/KwetBean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="73" column="73" selection-start="2109" selection-end="2109" vertical-scroll-proportion="0.0" vertical-offset="969" max-vertical-offset="1634">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/kwetter/service/KwetterService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="19" selection-start="965" selection-end="965" vertical-scroll-proportion="0.0" vertical-offset="481" max-vertical-offset="2875">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/kwetter/dao/UserDAOImplColl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="47" selection-start="609" selection-end="609" vertical-scroll-proportion="0.0" vertical-offset="66" max-vertical-offset="2229">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/kwetter/dao/LogDAOImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="13" selection-start="739" selection-end="739" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="903">
+        <state line="38" column="12" selection-start="1019" selection-end="1019" vertical-scroll-proportion="0.51898736" vertical-offset="482" max-vertical-offset="1625">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/kwetter/dao/interfaces/PostingDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="9" selection-start="328" selection-end="328" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="648">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/kwetter/dao/interfaces/TrendDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="9" selection-start="251" selection-end="251" vertical-scroll-proportion="0.0" vertical-offset="155" max-vertical-offset="695">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/kwetter/dao/interfaces/UserDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="8" selection-start="372" selection-end="372" vertical-scroll-proportion="0.0" vertical-offset="226" max-vertical-offset="852">
+        <state line="23" column="31" selection-start="444" selection-end="444" vertical-scroll-proportion="0.0" vertical-offset="103" max-vertical-offset="762">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/kwetter/dao/PostingDAOImplColl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="53" selection-start="679" selection-end="679" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="1362">
+        <state line="52" column="8" selection-start="1264" selection-end="1276" vertical-scroll-proportion="-0.13559322" vertical-offset="932" max-vertical-offset="1629">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/kwetter/dao/TrendDAOImplColl.java">
+    <entry file="file://$PROJECT_DIR$/web/admin.xhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="49" selection-start="602" selection-end="602" vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="1889">
+        <state line="22" column="56" selection-start="1033" selection-end="1112" vertical-scroll-proportion="-6.5384617" vertical-offset="204" max-vertical-offset="906">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/kwetter/dao/TrendDAOImplJPA.java">
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/glassfish-web.xml">
+      <provider editor-type-id="com.intellij.javaee.oss.glassfish.editor.GlassfishWebRootProvider">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="15" selection-start="731" selection-end="731" vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="2620">
+        <state line="15" column="42" selection-start="719" selection-end="719" vertical-scroll-proportion="-10.2" vertical-offset="0" max-vertical-offset="588">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/kwetter/dao/UserDAOImplJPA.java">
+    <entry file="file://$PROJECT_DIR$/web/components/moderate.xhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="3" selection-start="627" selection-end="627" vertical-scroll-proportion="0.0" vertical-offset="1496" max-vertical-offset="2433">
+        <state line="25" column="48" selection-start="1447" selection-end="1447" vertical-scroll-proportion="-10.461538" vertical-offset="153" max-vertical-offset="906">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/kwetter/beans/ModeratorBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="24" selection-start="590" selection-end="590" vertical-scroll-proportion="0.55837566" vertical-offset="256" max-vertical-offset="904">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/kwetter/domain/Trend.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="15" selection-start="306" selection-end="306" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="1221">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/kwetter/domain/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="34" selection-start="808" selection-end="808" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="4353">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/kwetter/domain/Role.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="22" selection-start="399" selection-end="399" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1348">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/kwetter/dao/PostingDAOImplJPA.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="0" selection-start="1172" selection-end="1172" vertical-scroll-proportion="0.33333334" vertical-offset="668" max-vertical-offset="1226">
+        <state line="68" column="64" selection-start="1694" selection-end="1694" vertical-scroll-proportion="0.0" vertical-offset="918" max-vertical-offset="1544">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="44" column="40" selection-start="1730" selection-end="1730" vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="1633">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/faces-config.xml">
+      <provider editor-type-id="com.intellij.jsf.yfilesGraph.editor.FacesNavigationFileEditorProvider">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="407">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/beans.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="49" selection-start="472" selection-end="472" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="558">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/kwetter/beans/RegisterBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="73" selection-start="881" selection-end="881" vertical-scroll-proportion="0.0" vertical-offset="465" max-vertical-offset="2517">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/kwetter/domain/Kwet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="34" selection-start="788" selection-end="788" vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="3499">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/kwetter/domain/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="58" selection-start="639" selection-end="639" vertical-scroll-proportion="0.0" vertical-offset="323" max-vertical-offset="2156">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/kwetter/beans/KwetBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="13" selection-start="568" selection-end="568" vertical-scroll-proportion="0.0" vertical-offset="1020" max-vertical-offset="1646">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/kwetter/service/interfaces/IKwetterService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="12" selection-start="922" selection-end="922" vertical-scroll-proportion="0.0" vertical-offset="613" max-vertical-offset="1170">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/kwetter/dao/UserDAOImplColl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="127" column="39" selection-start="2842" selection-end="2842" vertical-scroll-proportion="0.0" vertical-offset="2026" max-vertical-offset="2683">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/kwetter/dao/interfaces/UserDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="40" selection-start="906" selection-end="906" vertical-scroll-proportion="0.0" vertical-offset="596" max-vertical-offset="1051">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/kwetter/service/InitBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="0" selection-start="450" selection-end="450" vertical-scroll-proportion="0.0" vertical-offset="278" max-vertical-offset="1752">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../../../../../Apps/Java/jdk1.7.0_51/src.zip!/javax/annotation/PostConstruct.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="60" column="18" selection-start="1832" selection-end="1832" vertical-scroll-proportion="0.33333334" vertical-offset="902" max-vertical-offset="1391">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/kwetter/service/KwetterService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="50" column="5" selection-start="1233" selection-end="1233" vertical-scroll-proportion="0.0" vertical-offset="799" max-vertical-offset="4043">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/kwetter/service/KwetterScheduler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="8" selection-start="530" selection-end="530" vertical-scroll-proportion="0.0" vertical-offset="307" max-vertical-offset="1017">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/index.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="0" selection-start="542" selection-end="594" vertical-scroll-proportion="-7.1923075" vertical-offset="0" max-vertical-offset="1161">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/loginerror.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="7" selection-start="437" selection-end="437" vertical-scroll-proportion="-7.1923075" vertical-offset="0" max-vertical-offset="508">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/components/happening.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="27.461538" vertical-offset="714" max-vertical-offset="1199">
+          <folding>
+            <marker date="1395168430925" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1395168430925" expanded="true" signature="-1:-1" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/components/recent.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="23" selection-start="1789" selection-end="1789" vertical-scroll-proportion="-19.615385" vertical-offset="0" max-vertical-offset="1039">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/webjars/jquery/2.1.0-2/jquery-2.1.0-2.jar!/META-INF/resources/webjars/jquery/2.1.0/webjars-requirejs.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="496">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAPI/web/resources/jquery.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9101" column="45" selection-start="347432" selection-end="347432" vertical-scroll-proportion="26.779528" vertical-offset="144514" max-vertical-offset="155234">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/webjars/jquery/2.1.0-2/jquery-2.1.0-2.jar!/META-INF/maven/org.webjars/jquery/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="714" max-vertical-offset="3288">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAPI/web/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="0" selection-start="598" selection-end="598" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="575">
+          <folding>
+            <marker date="1396689046449" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/classes/META-INF/persistence.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="4" selection-start="118" selection-end="1047" vertical-scroll-proportion="0.0" vertical-offset="17" max-vertical-offset="660">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="50" column="8" selection-start="1772" selection-end="1938" vertical-scroll-proportion="0.0" vertical-offset="697" max-vertical-offset="2479">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAPI/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="21" selection-start="1002" selection-end="1002" vertical-scroll-proportion="0.0" vertical-offset="173" max-vertical-offset="796">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAPI/src/main/java/domain/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="13" selection-start="179" selection-end="179" vertical-scroll-proportion="0.43220338" vertical-offset="0" max-vertical-offset="1272">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/kwetter/dao/UserDAOImplJPA.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="19" selection-start="368" selection-end="368" vertical-scroll-proportion="0.102639295" vertical-offset="169" max-vertical-offset="3469">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAPI/web/resources/json.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="537" column="5" selection-start="18182" selection-end="18182" vertical-scroll-proportion="0.0" vertical-offset="8809" max-vertical-offset="9453">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAPI/web/resources/jsontable.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="25" selection-start="112" selection-end="112" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3571">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAPI/web/resources/jquery.json2html.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1582">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAPI/src/main/java/META-INF/persistence.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="33" selection-start="286" selection-end="286" vertical-scroll-proportion="0.19209039" vertical-offset="0" max-vertical-offset="592">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAPI/src/main/java/exceptions/EntityNotFoundMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="8" selection-start="259" selection-end="259" vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="677">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAPI/src/main/java/exceptions/IllegalArgumentMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="0" selection-start="380" selection-end="380" vertical-scroll-proportion="0.0" vertical-offset="154" max-vertical-offset="660">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAPI/src/main/java/hello/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="82" column="0" selection-start="2949" selection-end="2949" vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="1786">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAPI/web/hello.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="17" selection-start="1367" selection-end="1367" vertical-scroll-proportion="0.64761907" vertical-offset="510" max-vertical-offset="3902">
           <folding />
         </state>
       </provider>
@@ -1818,12 +1927,12 @@
           <artifact-editor>
             <show-content>
               <type id="library" />
-              <type id="jpa-descriptors" />
               <type id="artifact" />
               <type id="javaee-facet-resources" />
+              <type id="jpa-descriptors" />
             </show-content>
           </artifact-editor>
-          <last-edited>kwetter</last-edited>
+          <last-edited>webapi</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1872,7 +1981,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>KwetterV1</last-edited>
+          <last-edited>Web|WebAPI</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

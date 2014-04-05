@@ -23,7 +23,7 @@ public class Kwet implements Comparable<Kwet>, Comparator<Kwet>
 
     @ManyToMany(mappedBy = "mentions")
     private Set<User> mentioned = new HashSet<User>();
-    @ManyToMany(mappedBy = "kwets", cascade = CascadeType.PERSIST)
+    @ManyToMany(mappedBy = "kwets")
     private List<Trend> trends = new ArrayList<Trend>();
 
     public Kwet()

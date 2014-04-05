@@ -1,6 +1,5 @@
 package kwetter.dao;
 
-import kwetter.dao.interfaces.*;
 import kwetter.domain.Kwet;
 import kwetter.domain.User;
 import kwetter.events.KwetEvent;
@@ -14,7 +13,6 @@ import javax.enterprise.inject.Specializes;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
-import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -24,7 +22,7 @@ import java.util.List;
 @Alternative @Specializes
 public class PostingDAOImplJPA extends PostingDAOImplColl
 {
-    @PersistenceContext(unitName = "kwetterDB")
+    @PersistenceContext(unitName = "kwetterdb")
     private EntityManager em;
 
     public PostingDAOImplJPA()
@@ -41,6 +39,12 @@ public class PostingDAOImplJPA extends PostingDAOImplColl
         return q.getResultList();
     }
 
+    @Override
+    public Kwet getKwet(int id)
+    {
+        return this.em.find(Kwet.class, id);
+    }
+
     @Override @VolgTrend
     public void addKwet(@Observes @AddKwet KwetEvent evt)
     {
@@ -49,5 +53,19 @@ public class PostingDAOImplJPA extends PostingDAOImplColl
         em.persist(kwet);
         evt.kwet = kwet;
         user.addKwet(kwet);
+    }
+
+    @Override
+    public List<Kwet> getAllKwets()
+    {
+        Query query = em.createQuery("select kwet from Kwets kwet");
+        return query.getResultList();
+    }
+
+    @Override
+    public void removeKwet(Kwet kwet)
+    {
+        this.em.remove(kwet);
+        this.em.getEntityManagerFactory().getCache().evictAll();
     }
 }

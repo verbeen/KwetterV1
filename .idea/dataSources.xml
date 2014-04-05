@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="1795467098">
+  <component name="DataSourceManagerImpl" format="xml" hash="757396222">
     <data-source source="LOCAL" name="MySQL - kwetterdb@localhost" uuid="5b1d6cc3-653c-4c31-8d81-a714b5facfcb">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
@@ -9,6 +9,20 @@
       <user-name>root</user-name>
       <user-password>dfd8dfc5dfc5dfde</user-password>
       <schema-pattern>kwetterdb.*</schema-pattern>
+      <driver-properties>
+        <property name="zeroDateTimeBehavior" value="convertToNull" />
+        <property name="tinyInt1isBit" value="false" />
+      </driver-properties>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="MySQL - jdbcrealm@localhost" uuid="ac47c97f-5468-4c07-8524-038b63f4b486">
+      <driver-ref>mysql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306/jdbcrealm</jdbc-url>
+      <user-name>root</user-name>
+      <user-password>dfd8dfc5dfc5dfde</user-password>
+      <schema-pattern>*</schema-pattern>
       <driver-properties>
         <property name="zeroDateTimeBehavior" value="convertToNull" />
         <property name="tinyInt1isBit" value="false" />

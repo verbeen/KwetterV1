@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
-    <persistence-unit name="kwetterDB" transaction-type="JTA">
+    <persistence-unit name="webapidb" transaction-type="JTA">
         <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
-        <jta-data-source>kwetterDB</jta-data-source>
-        <class>kwetter.domain.Kwet</class>
-        <class>kwetter.domain.Trend</class>
-        <class>kwetter.domain.User</class>
+        <jta-data-source>webapidb</jta-data-source>
+        <class>domain.User</class>
         <properties>
             <property name="eclipselink.logging.level" value="FINE"/>
             <property name="eclipselink.ddl-generation" value="drop-and-create-tables"/>
