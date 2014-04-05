@@ -22,7 +22,7 @@ public class KwetterScheduler
     @PostConstruct
     public void startTimers()
     {
-        ScheduleExpression se = new ScheduleExpression().hour("*").minute("*").second("*/5");
+        ScheduleExpression se = new ScheduleExpression().hour("*");
         timerService.createCalendarTimer(se, new TimerConfig("application timeout check", false));
     }
 

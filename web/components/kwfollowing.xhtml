@@ -1,0 +1,54 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:c="http://java.sun.com/jsp/jstl/core"
+                xmlns:p="http://primefaces.org/ui" >
+    <script type='text/javascript' src='resources/jquery.js'></script>
+    <script type='text/javascript' src='resources/jsontable.js'></script>
+    <h:form style="display: none">
+        <p:remoteCommand name="viewUser" actionListener="#{userBean.setViewingUser()}" oncomplete="window.location.reload()"/>
+    </h:form>
+    <script type="text/javascript">
+        function getUserFollowedBy()
+        {
+            $.getJSON
+            (
+                "http://localhost:8080/kwetter/api/service/user/followers/" + $("#followedname").val(),
+                function(data)
+                {
+                    var obj = ConvertJsonToTable(data, null, null, null);
+                    $("#userlist").html(obj);
+                }
+            )
+            .fail(function(xhr)
+            {
+                alert("An error occured. HTML error code " + xhr.status);
+            });
+            $.get
+            (
+                "http://localhost:8080/kwetter/api/service/user/followers/" + $("#followedname").val(),
+                function(data)
+                {
+                    $("#userlist").append(data);
+                },
+                "xml"
+            )
+            .fail(function(xhr)
+            {
+                alert("An error occured. HTML error code " + xhr.status);
+            });
+        }
+    </script>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            Tweets
+        </div>
+        <div class="panel-body" style="max-height: 560px; overflow-y: scroll;">
+            <input id="followedname" type="text" placeholder="Username" />
+            <button class="btn btn-default" onclick="getUserFollowedBy()">Search Followers</button>
+            <ul id="userlist" class="list-group media-list">
+
+            </ul>
+        </div>
+    </div>
+</ui:composition>

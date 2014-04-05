@@ -1,6 +1,7 @@
 package kwetter.domain;
 
 import javax.persistence.*;
+import javax.xml.bind.annotation.XmlRootElement;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 

@@ -24,6 +24,7 @@
         <processorPath useClasspath="true" />
         <module name="KwetterV1" />
         <module name="WebAPI" />
+        <module name="WebClient" />
       </profile>
     </annotationProcessing>
   </component>

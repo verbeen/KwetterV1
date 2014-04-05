@@ -5,11 +5,8 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:p="http://primefaces.org/ui" xmlns:c="http://java.sun.com/jstl/core">
-<h:head>
-    <h:outputStylesheet library="webjars" name="bootstrap/3.1.1/css/bootstrap.css" />
-</h:head>
 <body>
-<ui:composition template="templates/template.xhtml">
+<ui:composition template="../templates/template.xhtml">
     <div class="container">
         <ui:define name="content">
             <div class="row">
@@ -18,10 +15,14 @@
                 <div class="col-md-8">
                     <div class="row">
                         <div class="col-md-6">
-                            <ui:include src="components/happening.xhtml"/>
+                            <c:if test="#{request.isUserInRole('admin')}">
+                                <ui:include src="../components/batch.xhtml"/>
+                            </c:if>
                         </div>
                         <div class="col-md-6">
-                            <ui:include src="components/recent.xhtml" />
+                            <c:if test="#{request.isUserInRole('moderator')}">
+                                <ui:include src="../components/moderate.xhtml" />
+                            </c:if>
                         </div>
                     </div>
                 </div>
@@ -34,10 +35,9 @@
                 <div class="col-md-8">
                     <div class="row">
                         <div class="col-md-6">
-                            <ui:include src="components/timeline.xhtml"/>
+                            <ui:include src="../components/kwfollowing.xhtml"/>
                         </div>
                         <div class="col-md-6">
-                            <ui:include src="components/trends.xhtml" />
                         </div>
                     </div>
                 </div>

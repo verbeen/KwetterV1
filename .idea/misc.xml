@@ -42,6 +42,7 @@
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/WebAPI/pom.xml" />
+        <option value="$PROJECT_DIR$/WebClient/pom.xml" />
       </list>
     </option>
   </component>

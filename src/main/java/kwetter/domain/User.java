@@ -1,5 +1,7 @@
 package kwetter.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.*;
 
@@ -17,6 +19,7 @@ public class User
     private String web;
     @Column(name="bio")
     private String bio;
+    @JsonIgnore
     @Column(name="password")
     private String password;
 
@@ -80,6 +83,7 @@ public class User
     {
         this.email = email;
     }
+
 
     public String getWeb()
     {

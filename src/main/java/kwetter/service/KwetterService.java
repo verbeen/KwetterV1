@@ -8,18 +8,19 @@ import kwetter.events.UserEvent;
 import kwetter.events.annotations.*;
 import kwetter.service.interfaces.IKwetterService;
 
-import javax.annotation.PostConstruct;
-import javax.annotation.Resource;
 import javax.ejb.*;
-import javax.ejb.Timer;
 import javax.enterprise.event.Event;
 import javax.inject.Inject;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
 import java.util.*;
 
 /**
  * Created by geh on 19-2-14.
  */
-@Stateless
+@Stateless @Path("service")
 public class KwetterService implements IKwetterService
 {
     @Inject
@@ -148,7 +149,7 @@ public class KwetterService implements IKwetterService
     }
 
     @Override
-    public User getUser(String name)
+    public User getUser(@PathParam("name") String name)
     {
         return this.userDAO.getUser(name);
     }
