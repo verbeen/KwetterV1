@@ -53,6 +53,7 @@ public class PostingDAOImplJPA extends PostingDAOImplColl
         em.persist(kwet);
         evt.kwet = kwet;
         user.addKwet(kwet);
+        this.em.getEntityManagerFactory().getCache().evictAll();
     }
 
     @Override

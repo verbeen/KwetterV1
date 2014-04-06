@@ -83,7 +83,8 @@ public class UserDAOImplJPA extends UserDAOImplColl
     @Override
     public User getUser(String name)
     {
-        return em.find(User.class, name);
+        User user = em.find(User.class, name);
+        return user;
     }
 
     @Override

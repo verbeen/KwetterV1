@@ -1,11 +1,10 @@
 package services;
 
 import domain.User;
-
-import javax.ejb.Singleton;
-import javax.ejb.Startup;
+import webservice.KwetDTO;
+import webservice.SoapService;
+import webservice.SoapServiceService;
 import javax.ejb.Stateless;
-import javax.persistence.EntityNotFoundException;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
@@ -73,6 +72,19 @@ public class ClientService
         return user;
     }
 
+    @GET @Path("post/{name},{content},{from}") @Produces("application/json")
+    public void postKwet(@PathParam("name") String name,@PathParam("content") String content,@PathParam("from") String from)
+    {
+        SoapService service = new SoapServiceService().getSoapServicePort();
+        service.postKwet(name, content, from);
+    }
+
+    @GET @Path("timeline/{name}") @Produces("application/json")
+    public List<KwetDTO> getTimeline(@PathParam("name") String name)
+    {
+        SoapService service = new SoapServiceService().getSoapServicePort();
+        return service.getTimeline(name);
+    }
 
     @GET @Path ("all") @Produces("application/json")
     public List<User> getUsers()
