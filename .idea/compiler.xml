@@ -22,7 +22,8 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
-        <module name="KwetterV1" />
+        <module name="JMSHelloWorld" />
+        <module name="JMSKwetterMonitor" />
         <module name="WebAPI" />
         <module name="WebClient" />
       </profile>

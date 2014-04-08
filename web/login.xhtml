@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui" xmlns:c="http://java.sun.com/jstl/core">
+<h:head>
+    <h:outputStylesheet library="webjars" name="bootstrap/3.1.1/css/bootstrap.css" />
+    <h:outputStylesheet>
+        body {
+            background-image: url(resources/bg.png);
+            background-position: left 40px;
+            background-attachment: fixed;
+            background-repeat: repeat;
+            background-repeat: no-repeat;
+            background-color: #C0DEED;
+        }
+    </h:outputStylesheet>
+</h:head>
+<body>
+    <ui:insert name="header" >
+        <ui:include src="templates/header-visitor.xhtml" />
+    </ui:insert>
+    <ui:insert name="defaultcontent" >
+        <ui:include src="templates/contents.xhtml" />
+    </ui:insert>
+    <ui:insert name="footer" >
+        <ui:include src="templates/footer.xhtml" />
+    </ui:insert>
+</body>
+</html>

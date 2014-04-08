@@ -11,4 +11,6 @@ public interface SecurityDAO
     void addRole(Role role);
 
     void addUserRole(User user, Role role);
+
+    Role getRole(String name);
 }

@@ -37,11 +37,11 @@ public class RegisterBean implements Serializable
     {
         if(this.name != null && this.password != null && this.service.addApplication(name, this.hashPassword(password), email, bio, web))
         {
-            return "?faces-redirect=true";
+            return "master.xhtml";
         }
         else
         {
-            return "loginerror.xhtml?faces-redirect=true";
+            return "loginerror.xhtml";
         }
     }
 

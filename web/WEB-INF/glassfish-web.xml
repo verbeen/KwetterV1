@@ -8,11 +8,15 @@
     </jsp-config>
     <class-loader delegate="true"/>
     <security-role-mapping>
-        <role-name>admin</role-name>
-        <group-name>admin</group-name>
+        <role-name>adminrole</role-name>
+        <group-name>adminrole</group-name>
     </security-role-mapping>
     <security-role-mapping>
-        <role-name>moderator</role-name>
-        <group-name>moderator</group-name>
+        <role-name>moderatorrole</role-name>
+        <group-name>moderatorrole</group-name>
+    </security-role-mapping>
+    <security-role-mapping>
+        <role-name>userrole</role-name>
+        <group-name>userrole</group-name>
     </security-role-mapping>
 </glassfish-web-app>

@@ -1,9 +1,6 @@
 package kwetter.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.util.ArrayList;
 import java.util.List;
@@ -11,10 +8,10 @@ import java.util.List;
 /**
  * Created by geh on 1-4-14.
  */
-@Entity(name="Roles") @Table(name="roles")
+@Entity(name="Roles") @Table(name="groups")
 public class Role
 {
-    @Id
+    @Id @Column(name = "rolename")
     private String name;
     @ManyToMany(mappedBy = "roles")
     private List<User> users = new ArrayList();

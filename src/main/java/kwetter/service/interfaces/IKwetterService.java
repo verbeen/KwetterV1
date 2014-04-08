@@ -2,6 +2,7 @@ package kwetter.service.interfaces;
 
 import kwetter.domain.*;
 
+import javax.websocket.Session;
 import java.io.Serializable;
 import java.util.Calendar;
 import java.util.List;
@@ -13,9 +14,9 @@ public interface IKwetterService extends Serializable
 {
     List<Kwet> searchKwets(String filter);
 
-    void addKwet(User user, String content, String from);
+    Kwet addKwet(User user, String content, String from);
 
-    void addKwet(User user, String content, Calendar cal, String from);
+    Kwet addKwet(User user, String content, Calendar cal, String from);
 
     List<Kwet> getAllKwets();
 
@@ -46,4 +47,12 @@ public interface IKwetterService extends Serializable
     Application getApplication(String name);
 
     boolean activate(String name, String key);
+
+    void addSession(User user, Session session);
+
+    void removeSession(User user, Session session);
+
+    List<Session> getSessions(User user);
+
+    void pushKwet(User user, Kwet kwet);
 }

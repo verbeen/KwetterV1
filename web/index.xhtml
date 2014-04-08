@@ -9,7 +9,7 @@
     <h:outputStylesheet library="webjars" name="bootstrap/3.1.1/css/bootstrap.css" />
 </h:head>
 <body>
-<ui:composition template="../templates/template.xhtml">
+    <ui:composition template="templates/template.xhtml">
     <div class="container">
         <ui:define name="content">
             <div class="row">
@@ -18,10 +18,10 @@
                 <div class="col-md-8">
                     <div class="row">
                         <div class="col-md-6">
-                            <ui:include src="../components/happening.xhtml"/>
+                            <ui:include src="components/happening.xhtml"/>
                         </div>
                         <div class="col-md-6">
-                            <ui:include src="../components/recent.xhtml" />
+                            <ui:include src="components/recent.xhtml" />
                         </div>
                     </div>
                 </div>
@@ -34,10 +34,10 @@
                 <div class="col-md-8">
                     <div class="row">
                         <div class="col-md-6">
-                            <ui:include src="../components/timeline.xhtml"/>
+                            <ui:include src="components/timeline.xhtml"/>
                         </div>
                         <div class="col-md-6">
-                            <ui:include src="../components/trends.xhtml" />
+                            <ui:include src="components/trends.xhtml" />
                         </div>
                     </div>
                 </div>

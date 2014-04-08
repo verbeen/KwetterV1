@@ -1,15 +1,10 @@
 package kwetter.dtos;
 
 import kwetter.domain.Kwet;
-import kwetter.domain.User;
-
-import javax.persistence.*;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
-import java.io.Serializable;
-import java.util.Calendar;
 
 /**
  * Created by geh on 6-4-14.
@@ -41,7 +36,6 @@ public class KwetDTO
         this.poster = kwet.getPoster().getName();
         this.postDate = kwet.getDatumString();
         this.postedFrom = kwet.getVanaf();
-
     }
 
     public String getId()

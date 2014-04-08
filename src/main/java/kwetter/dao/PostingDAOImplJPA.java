@@ -48,6 +48,7 @@ public class PostingDAOImplJPA extends PostingDAOImplColl
     @Override @VolgTrend
     public void addKwet(@Observes @AddKwet KwetEvent evt)
     {
+        this.em.getEntityManagerFactory().getCache().evictAll();
         Kwet kwet = evt.kwet;
         User user = evt.kwet.getPoster();
         em.persist(kwet);

@@ -45,6 +45,12 @@
         <option value="$PROJECT_DIR$/WebClient/pom.xml" />
       </list>
     </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/JMSKwetterGo/pom.xml" />
+        <option value="$PROJECT_DIR$/JMSKwetterMonitor/pom.xml" />
+      </set>
+    </option>
   </component>
   <component name="ModuleEditorState">
     <option name="LAST_EDITED_MODULE_NAME" />

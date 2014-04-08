@@ -11,7 +11,7 @@ public class User
     @Transient
     private static final long serialVersionUID = 1L;
 
-    @Column(unique = true, name="name") @Id
+    @Column(unique = true, name="username") @Id
     private String name;
     @Column(name="email")
     private String email;
@@ -31,7 +31,7 @@ public class User
     private List<Kwet> kwets = new ArrayList();
     @ManyToMany @JoinTable(name="mentions", joinColumns = { @JoinColumn(name = "mentions") }, inverseJoinColumns = { @JoinColumn(name="mentioned") })
     private List<Kwet> mentions = new ArrayList();
-    @ManyToMany @JoinTable(name="groups", joinColumns = { @JoinColumn(name = "user")}, inverseJoinColumns = { @JoinColumn(name="role") })
+    @ManyToMany @JoinTable(name="users_groups", joinColumns = { @JoinColumn(name = "username")}, inverseJoinColumns = { @JoinColumn(name="rolename") })
     private List<Role> roles = new ArrayList();
 
     public User()

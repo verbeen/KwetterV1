@@ -52,7 +52,7 @@ public class UserBean implements Serializable
             this.setViewingUser(user);
         }
 
-        return "?faces-redirect=true";
+        return "master.xhtml";
     }
 
     public User getAuthenticatedUser()
@@ -83,7 +83,7 @@ public class UserBean implements Serializable
         this.setCurrentUser(null);
         this.setViewingUser(null);
 
-        return "?faces-redirect=true";
+        return "login.xhtml";
     }
 
     public List<Kwet> getTimeline()
@@ -155,7 +155,7 @@ public class UserBean implements Serializable
             this.currentPage = page;
         }
 
-        return "?faces-redirect=true";
+        return "master.xhtml";
     }
 
     public User getCurrentUser()

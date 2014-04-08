@@ -1,7 +1,10 @@
 package kwetter.service;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.gson.Gson;
 import kwetter.dao.interfaces.*;
 import kwetter.domain.*;
+import kwetter.dtos.KwetDTO;
 import kwetter.events.FollowEvent;
 import kwetter.events.KwetEvent;
 import kwetter.events.UserEvent;
@@ -11,11 +14,14 @@ import kwetter.service.interfaces.IKwetterService;
 import javax.ejb.*;
 import javax.enterprise.event.Event;
 import javax.inject.Inject;
+import javax.websocket.Session;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import java.io.IOException;
 import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Created by geh on 19-2-14.
@@ -45,6 +51,7 @@ public class KwetterService implements IKwetterService
     private Event<KwetEvent> addKwetEvent;
     @Inject @ProcessKwet
     private Event<KwetEvent> processKwetEvent;
+    private ConcurrentHashMap<String, LinkedList<Session>> socketSessions = new ConcurrentHashMap();
 
     public KwetterService()
     {
@@ -58,12 +65,16 @@ public class KwetterService implements IKwetterService
     }
 
     @Override
-    public void addKwet(User user, String content, Calendar cal, String from)
+    public Kwet addKwet(User user, String content, Calendar cal, String from)
     {
         Kwet kwet = new Kwet(user, content, cal, from);
         KwetEvent evtPayload = new KwetEvent(kwet);
         this.addKwetEvent.fire(evtPayload);
         this.processKwetEvent.fire(evtPayload);
+
+        this.pushKwet(user, kwet);
+
+        return kwet;
     }
 
     @Override
@@ -83,12 +94,16 @@ public class KwetterService implements IKwetterService
     }
 
     @Override
-    public void addKwet(User user, String content, String from)
+    public Kwet addKwet(User user, String content, String from)
     {
         Kwet kwet = new Kwet(user, content, new GregorianCalendar(), from);
         KwetEvent evtPayload = new KwetEvent(kwet);
         this.addKwetEvent.fire(evtPayload);
         this.processKwetEvent.fire(evtPayload);
+
+        this.pushKwet(user, kwet);
+
+        return kwet;
     }
 
     @Override
@@ -216,4 +231,74 @@ public class KwetterService implements IKwetterService
 
         return true;
     }
+
+    @Override
+    public void addSession(User user, Session session)
+    {
+        LinkedList<Session> sessions;
+        if(this.socketSessions.containsKey(user.getName()))
+        {
+            sessions = this.socketSessions.get(user.getName());
+        }
+        else
+        {
+            sessions = new LinkedList<>();
+            this.socketSessions.put(user.getName(), sessions);
+        }
+
+        sessions.add(session);
+    }
+
+    @Override
+    public void removeSession(User user, Session session)
+    {
+        if(this.socketSessions.containsKey(user.getName()))
+        {
+            LinkedList<Session> sessions = this.socketSessions.get(user.getName());
+            sessions.remove(session);
+            if(sessions.size() == 0)
+            {
+                this.socketSessions.remove(user.getName());
+            }
+        }
+
+    }
+
+    @Override
+    public List<Session> getSessions(User user)
+    {
+        return this.socketSessions.get(user.getName());
+    }
+
+    @Override
+    public void pushKwet(User user, Kwet kwet)
+    {
+        this.pushKwet(this.socketSessions.get(user.getName()), kwet);
+        for(User follower : user.getFollowers())
+        {
+
+            this.pushKwet(this.socketSessions.get(follower.getName()), kwet);
+        }
+    }
+
+    private void pushKwet(LinkedList<Session> sessions, Kwet kwet)
+    {
+        try
+        {
+            if(sessions != null)
+            {
+                for(Session session : sessions)
+                {
+                    ObjectMapper mapper = new ObjectMapper();
+                    String str = mapper.writeValueAsString(new KwetDTO(kwet));
+                    session.getAsyncRemote().sendText(str);
+                }
+            }
+        }
+        catch(Exception e)
+        {
+            e.printStackTrace();
+        }
+    }
 }
+;

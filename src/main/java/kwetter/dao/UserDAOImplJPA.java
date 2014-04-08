@@ -48,6 +48,7 @@ public class UserDAOImplJPA extends UserDAOImplColl
     public void addUser(User user)
     {
         em.persist(user);
+        em.getEntityManagerFactory().getCache().evictAll();
     }
 
     @Override
@@ -90,6 +91,7 @@ public class UserDAOImplJPA extends UserDAOImplColl
     @Override
     public void addMentions(@Observes @ProcessKwet KwetEvent event)
     {
+        this.em.getEntityManagerFactory().getCache().evictAll();
         Kwet kwet = event.kwet;
 
         String[] split = kwet.getBody().split(" ");

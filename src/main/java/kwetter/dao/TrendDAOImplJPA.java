@@ -55,6 +55,7 @@ public class TrendDAOImplJPA extends TrendDAOImplColl
     @Override
     public void addTrends(@Observes @ProcessKwet KwetEvent event)
     {
+        this.em.getEntityManagerFactory().getCache().evictAll();
         Kwet kwet = event.kwet;
         String[] split = kwet.getBody().split(" ");
         for(String s : split)

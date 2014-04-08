@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title></title>
+    <script type='text/javascript' src='resources/jquery.js'></script>
+    <script type='text/javascript' src='resources/jsontable.js'></script>
+    <script type="text/javascript">
+        function openSocket()
+        {
+            if ("WebSocket" in window)
+            {
+                window.websocket = new WebSocket("ws://localhost:8080/kwetter/socket/kwet");
+                var ws = window.websocket;
+                ws.onopen = function()
+                {
+                    alert("Websocket opened.")
+                };
+                ws.onmessage = function (evt)
+                {
+                    var json = $.parseJSON(evt.data);
+                    var html = "";
+                    html += '<div style="float: left;">';
+                    html += "<div>id: " + json.id + "</div>";
+                    html += "<div>body: " + json.body + "</div>";
+                    html += "<div>poster: " + json.poster + "</div>";
+                    html += "<div>date: " + json.postDate + "</div>";
+                    html += "<div>from: " + json.postedFrom + "</div>";
+                    html += "</div>"
+                    $("#showmessage").append(html);
+                };
+                ws.onclose = function()
+                {
+                    alert("Connection is closed.");
+                };
+            }
+            else
+            {
+                alert("WebSocket NOT supported by your Browser!");
+            }
+        }
+        window.onload = function()
+        {
+            openSocket();
+        }
+        function sendKwet()
+        {
+            window.websocket.send($("#message").val());
+        }
+    </script>
+</head>
+<body>
+<textarea id="message" rows="3" cols="80" placeholder="Enter your new kwet here" style="resize:none;" />
+<button class="btn btn-default" onclick="sendKwet()">Post</button>
+
+<div id="showmessage"></div>
+</body>
+</html>

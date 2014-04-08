@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/JMSHelloWorld/JMSHelloWorld.iml" filepath="$PROJECT_DIR$/JMSHelloWorld/JMSHelloWorld.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JMSKwetterGo/JMSKwetterGo.iml" filepath="$PROJECT_DIR$/JMSKwetterGo/JMSKwetterGo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JMSKwetterMonitor/JMSKwetterMonitor.iml" filepath="$PROJECT_DIR$/JMSKwetterMonitor/JMSKwetterMonitor.iml" />
       <module fileurl="file://$PROJECT_DIR$/KwetterV1.iml" filepath="$PROJECT_DIR$/KwetterV1.iml" />
       <module fileurl="file://$PROJECT_DIR$/WebAPI/WebAPI.iml" filepath="$PROJECT_DIR$/WebAPI/WebAPI.iml" />
       <module fileurl="file://$PROJECT_DIR$/WebClient/WebClient.iml" filepath="$PROJECT_DIR$/WebClient/WebClient.iml" />

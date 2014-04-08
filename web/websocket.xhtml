@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title></title>
+    <script type='text/javascript' src='resources/jquery.js'></script>
+    <script type="text/javascript">
+        function sendEcho()
+        {
+            if ("WebSocket" in window)
+            {
+                var ws = new WebSocket("ws://localhost:8080/kwetter/socket");
+                ws.onopen = function()
+                {
+                    ws.send($("#message").val());
+                };
+                ws.onmessage = function (evt)
+                {
+                    alert("Message is received...");
+                    var received_msg = evt.data;
+                    $("#showmessage").html(received_msg);
+                };
+                ws.onclose = function()
+                {
+                    // websocket is closed.
+                    alert("Connection is closed...");
+                };
+            }
+            else
+            {
+                alert("WebSocket NOT supported by your Browser!");
+            }
+        }
+    </script>
+</head>
+<body>
+<textarea id="message" rows="3" cols="80" placeholder="Enter your message here" style="resize:none;" />
+<button class="btn btn-default" onclick="sendEcho()">Send</button>
+
+<div id="showmessage"></div>
+</body>
+</html>

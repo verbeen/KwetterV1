@@ -24,8 +24,9 @@ public class InitBean
     @PostConstruct
     private void init()
     {
-        Role adminRole = service.addRole("admin");
-        Role moderatorRole = service.addRole("moderator");
+        Role userRole = service.addRole("userrole");
+        Role adminRole = service.addRole("adminrole");
+        Role moderatorRole = service.addRole("moderatorrole");
 
         User admin = service.addUser("admin", "8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918", "a@b.com", "ekjlrgbsrbhtlks", "hrthrdty");
         User moderator = service.addUser("moderator", "8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918", "a@b.com", "bio", "web" );
@@ -34,7 +35,13 @@ public class InitBean
         User bert = service.addUser("bert", "8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918", "a@b.com", "gkejrbgkjlesr", "wefwe");
 
         service.addRole(admin, adminRole);
+        service.addRole(admin, userRole);
         service.addRole(moderator, moderatorRole);
+        service.addRole(moderator, userRole);
+        service.addRole(jan, adminRole);
+        service.addRole(jan, userRole);
+        service.addRole(piet, userRole);
+        service.addRole(bert, userRole);
 
         GregorianCalendar cal = new GregorianCalendar();
         cal.add(Calendar.HOUR, -24);
